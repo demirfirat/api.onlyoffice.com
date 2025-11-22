@@ -4,69 +4,142 @@ sidebar_position: -3
 
 # Icons
 
-Plugin icon image files that are specified in the [config.json](./configuration/configuration.md#variationsicons) file as the URL to the icon. This URL allows you to set the rules for theme (name, type), state (normal, hover, active), and scaling in the following format:
+When building a plugin for ONLYOFFICE, adding icons can significantly enhance usability and make your interface more intuitive.
 
-``` ini
-%parameter_name%(option1|options2|...)
+## Folder structure
+
+Before adding icons, it’s important to organize your plugin files properly.
+A clean folder structure ensures that ONLYOFFICE can correctly locate your resources and that your plugin remains easy to maintain as it grows.
+
+Your plugin should include a /resources directory to store all images, icons, and other static assets.
+This folder is automatically accessible to ONLYOFFICE when the plugin is loaded.
+
+Here’s a recommended layout:
+
+
+``` ts
+my-plugin/
+├── config.json
+├── index.html
+├── plugin.js
+└── resources/
+    ├── dark/
+    │   ├── icon.png
+    │   ├── icon@1.25x.png
+    │   ├── icon@1.5x.png
+    │   ├── icon@1.75x.png
+    │   ├── icon@2x.png
+    │
+    ├── light/
+    │   ├── icon.png
+    │   ├── icon@1.25x.png
+    │   ├── icon@1.5x.png
+    │   ├── icon@1.75x.png
+    │   ├── icon@2x.png
+    │
+    └── store/
+        ├── icons/
+        │   ├── icon.png
+        │   ├── icon.svg
+        │   ├── icon@1.25x.png
+        │   ├── icon@1.5x.png
+        │   ├── icon@1.75x.png
+        │   └── icon@2x.png
+        └── screenshots/
+            ├── screen_1.png
+            ├── screen_2.png
+            ├── screen_3.png
+            ├── screen_4.png
+            ├── screen_5.png
+            └── screen_6.png
 ```
+This hierarchy allows ONLYOFFICE to automatically choose the correct icon based on the theme, state, and scale.
 
-For example:
+## Defining the icon in config.json
 
-``` ini
+Inside your config.json, define your icon using a smart URL pattern that adapts to themes and scaling:
+
+``` json
+{
+"name": "My Plugin",
+ 
+"guid": "asc.{UUID}",
+ 
+"version": "1.0.0",
+ 
+"description": "Example plugin with adaptive icons",
+ 
+"icons": [
+ 
 "resources/%theme-name%(classic|dark)/%theme-type%(light|dark)/icon%state%(normal|hover)%scale%(default|*).%extension%(png|svg)"
+ 
+],
+ 
+"isVisual": true,
+ 
+"initDataType": "none",
+ 
+"initOnSelectionChanged": false
+}
 ```
 
-The following parameters are available:
+This single line dynamically tells the editor where to look for the icon depending on:
 
-## theme-name
+* The theme name (classic or dark)
+* The theme type (light or dark)
+* The state (normal, hover)
+* The scale (100%, 125%, 150%, etc.)
+* The extension (png or svg)
 
-The theme name (*classic*, *dark*, etc.)
+## How it works
 
-Type: string
+When the plugin loads, ONLYOFFICE:
 
-Example: "classic"
+1. Detects the active editor theme (light/dark).
+2. Checks the screen scale (e.g. 125%).
+3. Loads the corresponding icon variant.
+4. If no perfect match is found, it picks the closest size available.
 
-## theme-type
+If the user is working in Dark Theme with a 150% zoom level, the editor automatically applies:
 
-The theme type of the plugin icons. It can have the *light* or *dark* values.
+```
+resources/dark/dark/icon@1.5x.png
+```
 
-Type: string
+## Minimal example
 
-Example: "light"
+If you don’t need multiple scales or themes, you can keep it simple:
 
-## state
+```
+"icons": ["resources/icon.svg"]
+```
+That’s all you need — the SVG format is automatically scaled and works for both light and dark modes.
 
-The icon state. The following values are available: *normal*, *hover*, *active*.
-When this parameter is equal to *normal*, it will be changed with an empty string in the resulting URL. The *hover* and *active* values will be changed *with _hover* and *_active*.
+## Optional: adding icons to content controls
 
-Type: string
+You can also use icons inside content control buttons introduced in version 9.0:
 
-Example: "normal"
+``` ts
+let button = new Asc.ButtonContentControl();
+ 
+button.icons = "/resources/check%scale%(default).png";
+ 
+button.attachOnClick(function(contentControlId){
+ 
+Asc.plugin.executeMethod("RemoveContentControl", [contentControlId]);
+ 
+});
+```
+This allows you to add interactive buttons directly inside your document content.
 
-## scale
+## Tips for better icons
 
-All the supported scaling types for the plugin icons. The default value means the same as *100|125|150|175|200*. The *\** value means all other scales.
+* Use SVG whenever possible it scales perfectly and looks crisp at any DPI.
+* Keep your icon canvas size around 24×24 or 32×32 px.
+* Always test your icons in light and dark themes.
+* Use naming consistency, for example: icon_hover@1.25x.png.
 
-The document editor chooses the necessary icons in the following way:
-
-1. get the information about the current scaling and find an icon for it;
-2. if there is no such an icon in the *config*, take the one which is the closest to the required size and round it up (150% instead of 140%).
-
-Type: string
-
-Example: "default"
-
-## extension
-
-The icon extension. If there is the *svg* extension in the options, it will be used for all unspecified scales and for the *\** value. For the specified extensions, the last of all the listed "non-svg" extensions will be used. If there are no other extensions in the options, then the *svg* extension will be used as well.
-
-Type: string
-
-Example: "svg"
-
-> Please note that all parameters are optional. You can use just the path to the icon. For example, *"resources/icon.svg"*.
-
-This string generates the objects in the old icon format (the [icon2](./configuration/configuration.md#variationsicons2) parameter):
+> This string generates the objects in the old icon format (the [icon2](./configuration/configuration.md#variationsicons2) parameter):
 
 ``` ts
 [
