@@ -4,15 +4,12 @@ sidebar_position: -3
 
 # Icons
 
-When building a plugin for ONLYOFFICE, adding icons can significantly enhance usability and make your interface more intuitive.
+When building a plugin for editor, adding icons can significantly enhance usability and make your interface more intuitive.
 
 ## Folder structure
 
-Before adding icons, it’s important to organize your plugin files properly.
-A clean folder structure ensures that ONLYOFFICE can correctly locate your resources and that your plugin remains easy to maintain as it grows.
-
-Your plugin should include a /resources directory to store all images, icons, and other static assets.
-This folder is automatically accessible to ONLYOFFICE when the plugin is loaded.
+Your plugin should include a */resources* directory to store all images, icons, and other static assets.
+This folder is automatically accessible to editor when the plugin is loaded.
 
 Here’s a recommended layout:
 
@@ -53,11 +50,11 @@ my-plugin/
             ├── screen_5.png
             └── screen_6.png
 ```
-This hierarchy allows ONLYOFFICE to automatically choose the correct icon based on the theme, state, and scale.
+This hierarchy allows editor to automatically choose the correct icon based on the theme, state, and scale.
 
 ## Defining the icon in config.json
 
-Inside your config.json, define your icon using a smart URL pattern that adapts to themes and scaling:
+Inside your [config.json](./configuration/configuration.md), define your icon using a smart URL pattern that adapts to themes and scaling:
 
 ``` json
 {
@@ -93,7 +90,7 @@ This single line dynamically tells the editor where to look for the icon dependi
 
 ## How it works
 
-When the plugin loads, ONLYOFFICE:
+When the plugin loads, editor:
 
 1. Detects the active editor theme (light/dark).
 2. Checks the screen scale (e.g. 125%).
@@ -105,15 +102,6 @@ If the user is working in Dark Theme with a 150% zoom level, the editor automati
 ```
 resources/dark/dark/icon@1.5x.png
 ```
-
-## Minimal example
-
-If you don’t need multiple scales or themes, you can keep it simple:
-
-```
-"icons": ["resources/icon.svg"]
-```
-That’s all you need — the SVG format is automatically scaled and works for both light and dark modes.
 
 ## Optional: adding icons to content controls
 
@@ -132,14 +120,28 @@ Asc.plugin.executeMethod("RemoveContentControl", [contentControlId]);
 ```
 This allows you to add interactive buttons directly inside your document content.
 
-## Tips for better icons
+## Parameters  
 
-* Use SVG whenever possible it scales perfectly and looks crisp at any DPI.
-* Keep your icon canvas size around 24×24 or 32×32 px.
-* Always test your icons in light and dark themes.
-* Use naming consistency, for example: icon_hover@1.25x.png.
+```mdx-code-block
+import APITable from '@site/src/components/APITable/APITable';
 
-> This string generates the objects in the old icon format (the [icon2](./configuration/configuration.md#variationsicons2) parameter):
+<APITable>
+```
+
+| Parameter  | Type   | Example     | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+|------------|--------|-------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| theme-name | string | `"classic"` | The theme name (*classic*, *dark*, etc.)                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+| theme-type | string | `"light"`   | The theme type of the plugin icons. It can have the *light* or *dark* values.                                                                                                                                                                                                                                                                                                                                                                                                               |
+| state      | string | `"normal"`  | The icon state. The following values are available: *normal*, *hover*, *active*. When this parameter is equal to *normal*, it will be changed with an empty string in the resulting URL. The *hover* and *active* values will be changed with *_hover* and *_active*.                                                                                                                                                                                                                       |
+| scale      | string | `"default"` | All the supported scaling types for the plugin icons. The default value means the same as *100\|125\|150\|175\|200*. The *\** value means all other scales.<br /><br />The document editor chooses the necessary icons in the following way:<br /><br />1. get the information about the current scaling and find an icon for it;<br /><br />2. if there is no such an icon in the *config*, take the one which is the closest to the required size and round it up (150% instead of 140%). |
+| extension  | string | `"svg"`     | The icon extension. If there is the *svg* extension in the options, it will be used for all unspecified scales and for the *\** value. For the specified extensions, the last of all the listed "non-svg" extensions will be used. If there are no other extensions in the options, then the *svg* extension will be used as well.                                                                                                                                                          |
+
+```mdx-code-block
+</APITable>
+```
+
+
+This string generates the objects in the old icon format (the [icon2](./configuration/configuration.md#variationsicons2) parameter):
 
 ``` ts
 [
