@@ -11,45 +11,45 @@ When building a plugin for editor, adding icons can significantly enhance usabil
 Your plugin should include a */resources* directory to store all images, icons, and other static assets.
 This folder is automatically accessible to editor when the plugin is loaded.
 
-Here’s a recommended layout:
-
+Here's a recommended layout:
 
 ``` ts
 my-plugin/
-├── config.json
-├── index.html
-├── plugin.js
-└── resources/
-    ├── dark/
-    │   ├── icon.png
-    │   ├── icon@1.25x.png
-    │   ├── icon@1.5x.png
-    │   ├── icon@1.75x.png
-    │   ├── icon@2x.png
-    │
-    ├── light/
-    │   ├── icon.png
-    │   ├── icon@1.25x.png
-    │   ├── icon@1.5x.png
-    │   ├── icon@1.75x.png
-    │   ├── icon@2x.png
-    │
-    └── store/
-        ├── icons/
-        │   ├── icon.png
-        │   ├── icon.svg
-        │   ├── icon@1.25x.png
-        │   ├── icon@1.5x.png
-        │   ├── icon@1.75x.png
-        │   └── icon@2x.png
-        └── screenshots/
-            ├── screen_1.png
-            ├── screen_2.png
-            ├── screen_3.png
-            ├── screen_4.png
-            ├── screen_5.png
-            └── screen_6.png
+|-- config.json
+|-- index.html
+|-- plugin.js
+`-- resources/
+    |-- dark/
+    |   |-- icon.png
+    |   |-- icon@1.25x.png
+    |   |-- icon@1.5x.png
+    |   |-- icon@1.75x.png
+    |   |-- icon@2x.png
+    |
+    |-- light/
+    |   |-- icon.png
+    |   |-- icon@1.25x.png
+    |   |-- icon@1.5x.png
+    |   |-- icon@1.75x.png
+    |   |-- icon@2x.png
+    |
+    `-- store/
+        |-- icons/
+        |   |-- icon.png
+        |   |-- icon.svg
+        |   |-- icon@1.25x.png
+        |   |-- icon@1.5x.png
+        |   |-- icon@1.75x.png
+        |   `-- icon@2x.png
+        `-- screenshots/
+            |-- screen_1.png
+            |-- screen_2.png
+            |-- screen_3.png
+            |-- screen_4.png
+            |-- screen_5.png
+            `-- screen_6.png
 ```
+
 This hierarchy allows editor to automatically choose the correct icon based on the theme, state, and scale.
 
 ## Defining the icon in config.json
@@ -97,10 +97,10 @@ When the plugin loads, editor:
 3. Loads the corresponding icon variant.
 4. If no perfect match is found, it picks the closest size available.
 
-If the user is working in Dark Theme with a 150% zoom level, the editor automatically applies:
+For example, when the editor is set to a dark theme with a zoom level of 150%, the following adjustments are automatically applied:
 
 ```
-resources/dark/dark/icon@1.5x.png
+resources/dark/icon@1.5x.png
 ```
 
 ## Optional: adding icons to content controls
