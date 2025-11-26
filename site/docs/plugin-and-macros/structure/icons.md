@@ -24,14 +24,14 @@ my-plugin/
     |   |-- icon@1.25x.png
     |   |-- icon@1.5x.png
     |   |-- icon@1.75x.png
-    |   |-- icon@2x.png
+    |   `-- icon@2x.png
     |
     |-- light/
     |   |-- icon.png
     |   |-- icon@1.25x.png
     |   |-- icon@1.5x.png
     |   |-- icon@1.75x.png
-    |   |-- icon@2x.png
+    |   `-- icon@2x.png
     |
     `-- store/
         |-- icons/
