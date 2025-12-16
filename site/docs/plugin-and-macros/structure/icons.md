@@ -6,119 +6,15 @@ sidebar_position: -3
 
 When building a plugin for editor, adding icons can significantly enhance usability and make your interface more intuitive.
 
-## Folder structure
-
-Your plugin should include a */resources* directory to store all images, icons, and other static assets.
-This folder is automatically accessible to editor when the plugin is loaded.
-
-Here's a recommended layout:
-
-``` ts
-my-plugin/
-|-- config.json
-|-- index.html
-|-- plugin.js
-`-- resources/
-    |-- dark/
-    |   |-- icon.png
-    |   |-- icon@1.25x.png
-    |   |-- icon@1.5x.png
-    |   |-- icon@1.75x.png
-    |   `-- icon@2x.png
-    |
-    |-- light/
-    |   |-- icon.png
-    |   |-- icon@1.25x.png
-    |   |-- icon@1.5x.png
-    |   |-- icon@1.75x.png
-    |   `-- icon@2x.png
-    |
-    `-- store/
-        |-- icons/
-        |   |-- icon.png
-        |   |-- icon.svg
-        |   |-- icon@1.25x.png
-        |   |-- icon@1.5x.png
-        |   |-- icon@1.75x.png
-        |   `-- icon@2x.png
-        `-- screenshots/
-            |-- screen_1.png
-            |-- screen_2.png
-            |-- screen_3.png
-            |-- screen_4.png
-            |-- screen_5.png
-            `-- screen_6.png
+``` ini
+%parameter_name%(option1|options2|...)
 ```
 
-This hierarchy allows editor to automatically choose the correct icon based on the theme, state, and scale.
+For example:
 
-## Defining the icon in config.json
-
-Inside your [config.json](./configuration/configuration.md), define your icon using a smart URL pattern that adapts to themes and scaling:
-
-``` json
-{
-"name": "My Plugin",
- 
-"guid": "asc.{UUID}",
- 
-"version": "1.0.0",
- 
-"description": "Example plugin with adaptive icons",
- 
-"icons": [
- 
+``` ini
 "resources/%theme-name%(classic|dark)/%theme-type%(light|dark)/icon%state%(normal|hover)%scale%(default|*).%extension%(png|svg)"
- 
-],
- 
-"isVisual": true,
- 
-"initDataType": "none",
- 
-"initOnSelectionChanged": false
-}
 ```
-
-This single line dynamically tells the editor where to look for the icon depending on:
-
-* The theme name (classic or dark)
-* The theme type (light or dark)
-* The state (normal, hover)
-* The scale (100%, 125%, 150%, etc.)
-* The extension (png or svg)
-
-## How it works
-
-When the plugin loads, editor:
-
-1. Detects the active editor theme (light/dark).
-2. Checks the screen scale (e.g. 125%).
-3. Loads the corresponding icon variant.
-4. If no perfect match is found, it picks the closest size available.
-
-For example, when the editor is set to a dark theme with a zoom level of 150%, the following adjustments are automatically applied:
-
-```
-resources/dark/icon@1.5x.png
-```
-
-## Optional: adding icons to content controls
-
-You can also use icons inside content control buttons introduced in version 9.0:
-
-``` ts
-let button = new Asc.ButtonContentControl();
- 
-button.icons = "/resources/check%scale%(default).png";
- 
-button.attachOnClick(function(contentControlId){
- 
-Asc.plugin.executeMethod("RemoveContentControl", [contentControlId]);
- 
-});
-```
-This allows you to add interactive buttons directly inside your document content.
 
 ## Parameters  
 
