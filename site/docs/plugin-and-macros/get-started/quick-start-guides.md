@@ -1,22 +1,25 @@
 # Quick Start Guides
 
-> **Get hands-on in minutes** — Follow these complete walkthroughs to build your first ONLYOFFICE plugin or macro.
+This guide provides step-by-step instructions for creating ONLYOFFICE plugins and macros. It includes three tutorials: a basic plugin implementation, a macro example, and instructions for using existing plugin templates.
+
+> **Note:** The plugin and macro APIs described in this guide are available in ONLYOFFICE Docs version 7.0 and later. For the latest features including macro recording and enhanced AI integration, version 9.2 or later is recommended.
 
 ---
 
-## 🚀 Hello World Plugin (Complete Walkthrough)
+## Plugin Development Tutorial
 
-Build the simplest possible plugin — a button that inserts "Hello World" into your document.
+This tutorial demonstrates how to create a basic plugin that inserts text into a document.
 
-**⏱️ Time:** 5 minutes | **Skill Level:** Beginner
+**Estimated time:** 5-10 minutes  
+**Prerequisites:** Basic knowledge of HTML, CSS, and JavaScript
 
 ### Step 1: Create the Plugin Structure
 
-Create a folder named `hello-world-plugin` with these files:
+Create a folder named `hello-world-plugin` with the following files:
 
-#### 📄 `config.json` — Plugin Configuration
+#### Plugin Configuration File
 
-This file tells ONLYOFFICE about your plugin:
+Create a file named `config.json` with the following content:
 
 ```json
 {
@@ -34,15 +37,17 @@ This file tells ONLYOFFICE about your plugin:
 }
 ```
 
-**Key fields explained:**
+**Configuration parameters:**
 - `name` — Display name in the plugin menu
-- `guid` — Unique identifier (change this for your plugin!)
+- `guid` — Unique identifier (must be changed for production use)
 - `url` — Entry point HTML file
-- `EditorsSupport` — Which editors support this plugin (word/cell/slide)
+- `EditorsSupport` — Supported editor types (word/cell/slide)
 
 ---
 
-#### 📄 `index.html` — Plugin Interface and Logic
+#### Plugin Interface File
+
+Create a file named `index.html` with the following content:
 
 ```html
 <!DOCTYPE html>
@@ -88,24 +93,24 @@ This file tells ONLYOFFICE about your plugin:
 
 ### Step 2: Add an Icon (Optional)
 
-Create or download a 48x48 PNG icon named `icon.png` in the same folder. This will appear in the plugin menu.
+Create or download a 48x48 pixel PNG icon named `icon.png` and place it in the plugin folder. This icon will appear in the plugin menu.
 
 ---
 
 ### Step 3: Install the Plugin
 
-Choose your environment:
+Installation procedures vary depending on your ONLYOFFICE deployment:
 
-#### For ONLYOFFICE Desktop Editors
+#### ONLYOFFICE Desktop Editors
 
 1. Open ONLYOFFICE Desktop
-2. Go to **Plugins → Settings → Add Plugin**
+2. Navigate to **Plugins → Settings → Add Plugin**
 3. Browse to your `hello-world-plugin` folder
 4. Click **OK**
 
-**📚 [Detailed Desktop installation guide →](../tutorials/installing/onlyoffice-desktop-editors/)**
+[Detailed Desktop installation guide →](../tutorials/installing/onlyoffice-desktop-editors/)
 
-#### For ONLYOFFICE Docs (On-Premises)
+#### ONLYOFFICE Docs (On-Premises)
 
 1. Copy your plugin folder to the server plugins directory:
    - Linux: `/var/www/onlyoffice/documentserver/sdkjs-plugins/`
@@ -113,25 +118,25 @@ Choose your environment:
 2. Restart the Document Server
 3. Refresh your browser
 
-**📚 [Detailed Docs installation guide →](../tutorials/installing/onlyoffice-docs-on-premises/)**
+[Detailed Docs installation guide →](../tutorials/installing/onlyoffice-docs-on-premises/)
 
 ---
 
-### Step 4: Test Your Plugin
+### Step 4: Test the Plugin
 
 1. Open a document in ONLYOFFICE
 2. Click **Plugins** in the toolbar
 3. Select **Hello World**
 4. Click the **Insert Hello World** button
-5. See "Hello World! 🎉" appear in your document!
+5. Verify that "Hello World! 🎉" appears in your document
 
 ---
 
-### Step 5: Extend Your Plugin
+### Step 5: Extend the Plugin
 
-Now that it works, try these enhancements:
+The following examples demonstrate common plugin enhancements:
 
-#### Add an Input Field
+#### Adding User Input
 
 ```html
 <input type="text" id="customText" placeholder="Enter your text">
@@ -145,7 +150,7 @@ Now that it works, try these enhancements:
 </script>
 ```
 
-#### Insert Formatted Content
+#### Inserting Formatted Content
 
 ```javascript
 function insertFormattedText() {
@@ -155,7 +160,7 @@ function insertFormattedText() {
 }
 ```
 
-#### Add Multiple Buttons
+#### Adding Multiple Actions
 
 ```html
 <button onclick="insertHeading()">Insert Heading</button>
@@ -176,37 +181,38 @@ function insertFormattedText() {
 
 ---
 
-### Next Steps for Plugin Development
+### Additional Resources
 
-**📚 Learn More:**
+**Documentation:**
 - [Plugin structure and configuration](../structure/configuration/configuration.md)
 - [Complete API reference](../interacting-with-editors/overview/overview.md)
 - [UI customization options](../customization/toolbar.md)
 
-**🎨 Explore Examples:**
+**Examples:**
 - [YouTube plugin](../samples/plugin-samples/youtube.md) — Embed videos
 - [Translator plugin](../samples/plugin-samples/translator.md) — Multi-language support
 - [50+ more examples](../samples/plugin-samples/plugin-samples.md)
 
 ---
 
-## ⚡ Hello World Macro (Complete Walkthrough)
+## Macro Development Tutorial
 
-Macros are even simpler — pure JavaScript with no installation required.
+This tutorial demonstrates how to create and execute macros for document automation.
 
-**⏱️ Time:** 2 minutes | **Skill Level:** Beginner
+**Estimated time:** 2-5 minutes  
+**Prerequisites:** Basic JavaScript knowledge
 
-### Step 1: Open the Macro Editor
+### Step 1: Access the Macro Editor
 
-1. Open any document in ONLYOFFICE
-2. Go to **Tools → Macros**
+1. Open a document in ONLYOFFICE
+2. Navigate to **Tools → Macros**
 3. The macro editor will open
 
 ---
 
-### Step 2: Write Your First Macro
+### Step 2: Create a Basic Macro
 
-Paste this code into the editor:
+Enter the following code in the macro editor:
 
 ```javascript
 (function() {
@@ -217,43 +223,44 @@ Paste this code into the editor:
     var oParagraph = Api.CreateParagraph();
     oParagraph.AddText("This text was added by a macro! 🎯");
     
-    // Make it bold and blue
+    // Apply formatting
     oParagraph.SetBold(true);
     oParagraph.SetColor(0, 102, 204);
     
-    // Add it to the document
+    // Insert into document
     oDocument.Push(oParagraph);
 })();
 ```
 
-**What this does:**
-- Gets the current document
-- Creates a new paragraph with text
-- Applies bold formatting and blue color
-- Inserts it into the document
+**Code explanation:**
+- `Api.GetDocument()` retrieves the current document object
+- `Api.CreateParagraph()` creates a new paragraph element
+- `AddText()` adds text content to the paragraph
+- `SetBold()` and `SetColor()` apply formatting
+- `Push()` inserts the paragraph into the document
 
 ---
 
-### Step 3: Run the Macro
+### Step 3: Execute the Macro
 
 1. Click the **Run** button (▶️) in the macro editor
-2. The formatted text appears instantly in your document!
+2. The formatted text will appear in your document
 
 ---
 
-### Step 4: Save Your Macro
+### Step 4: Save the Macro
 
 1. Click **Save** in the macro editor
-2. Give it a name like "Insert Blue Text"
-3. Now you can run it anytime from **Tools → Macros → [Your Macro Name]**
+2. Enter a descriptive name (e.g., "Insert Blue Text")
+3. Access saved macros via **Tools → Macros → [Macro Name]**
 
 ---
 
-### Practice Macros
+### Example Macros
 
-Try these examples to learn more:
+The following examples demonstrate common macro use cases:
 
-#### Auto-Format Headings
+#### Formatting Headings
 
 ```javascript
 (function() {
@@ -270,7 +277,7 @@ Try these examples to learn more:
 })();
 ```
 
-#### Find and Highlight Keywords
+#### Finding and Highlighting Text
 
 ```javascript
 (function() {
@@ -288,7 +295,7 @@ Try these examples to learn more:
 })();
 ```
 
-#### Create a Simple Table
+#### Creating Tables
 
 ```javascript
 (function() {
@@ -297,17 +304,17 @@ Try these examples to learn more:
     // Create a 3x3 table
     var oTable = Api.CreateTable(3, 3);
     
-    // Fill first row with headers
+    // Populate header row
     oTable.GetCell(0, 0).GetContent().GetElement(0).AddText("Name");
     oTable.GetCell(0, 1).GetContent().GetElement(0).AddText("Age");
     oTable.GetCell(0, 2).GetContent().GetElement(0).AddText("City");
     
-    // Add the table to document
+    // Insert table into document
     oDocument.Push(oTable);
 })();
 ```
 
-#### Calculate Statistics from Selection
+#### Calculating Text Statistics
 
 ```javascript
 (function() {
@@ -332,40 +339,43 @@ Try these examples to learn more:
 
 ---
 
-### Next Steps for Macro Development
+### Additional Resources
 
-**📚 Learn More:**
+**Documentation:**
 - [Complete macro guide](../macros/writing-macros.md)
 - [Custom spreadsheet functions](../macros/adding-custom-functions.md)
 - [Debugging macros](../macros/debugging.md)
 
-**🎨 Explore Examples:**
+**Examples:**
 - [Macro samples collection](../samples/macro-samples/macro-samples.md)
 - [Converting VBA macros](../macros/converting-vba-macros.md)
 
 ---
 
-## 🎯 Clone & Customize Template (Fastest Path)
+## Using Plugin Templates
 
-The quickest way to start is by cloning an existing plugin template and customizing it.
+This section explains how to use existing plugin templates as a starting point for development.
 
-**⏱️ Time:** 10 minutes | **Skill Level:** Beginner to Intermediate
+**Estimated time:** 10-15 minutes  
+**Prerequisites:** Git (optional), basic web development knowledge
 
-### Step 1: Choose a Template
+### Step 1: Select a Template
 
-Browse the official ONLYOFFICE plugin repository for templates:
+Browse the official ONLYOFFICE plugin repository:
 
-**🔗 [ONLYOFFICE Plugin Templates](https://github.com/ONLYOFFICE/sdkjs-plugins)**
+[ONLYOFFICE Plugin Templates](https://github.com/ONLYOFFICE/sdkjs-plugins)
 
-**Popular starting templates:**
+**Available templates:**
 - **Basic Plugin Template** — Minimal structure for custom plugins
-- **YouTube Plugin** — Example of embedding external content
-- **Translator Plugin** — Example of API integration
-- **OCR Plugin** — Example of advanced processing
+- **YouTube Plugin** — Embedding external content
+- **Translator Plugin** — API integration example
+- **OCR Plugin** — Advanced processing example
 
 ---
 
 ### Step 2: Clone the Repository
+
+Using Git:
 
 ```bash
 # Clone the entire plugins repository
@@ -375,15 +385,15 @@ git clone https://github.com/ONLYOFFICE/sdkjs-plugins.git
 cd sdkjs-plugins/youtube
 ```
 
-Or download a specific plugin as a ZIP file from GitHub.
+Alternatively, download a specific plugin as a ZIP file from GitHub.
 
 ---
 
-### Step 3: Customize the Plugin
+### Step 3: Customize the Configuration
 
-#### Update `config.json`
+#### Modify `config.json`
 
-Change these essential fields:
+Update the following required fields:
 
 ```json
 {
@@ -402,15 +412,15 @@ Change these essential fields:
 }
 ```
 
-**Generate a unique GUID:**
+**Generating a unique GUID:**
 - Use an online GUID generator
-- Or use Node.js: `node -e "console.log(require('crypto').randomUUID())"`
+- Use Node.js: `node -e "console.log(require('crypto').randomUUID())"`
 
 ---
 
-#### Modify the UI (`index.html`)
+#### Modify the Interface
 
-Update the HTML to match your needs:
+Update `index.html` to match your requirements:
 
 ```html
 <body>
@@ -431,9 +441,9 @@ Update the HTML to match your needs:
 
 ---
 
-#### Update Styles (`styles.css` or inline)
+#### Update Styles
 
-Customize the appearance:
+Customize the appearance in `styles.css` or inline styles:
 
 ```css
 body {
@@ -458,19 +468,17 @@ button:hover {
 
 ---
 
-### Step 4: Test Your Customized Plugin
+### Step 4: Test the Customized Plugin
 
-1. Install the plugin following the [installation guide](#step-3-install-the-plugin)
-2. Open ONLYOFFICE and test your changes
-3. Use browser DevTools (F12) to debug any issues
+1. Install the plugin following the [installation instructions](#step-3-install-the-plugin)
+2. Open ONLYOFFICE and test your modifications
+3. Use browser DevTools (F12) for debugging
 
 ---
 
-### Step 5: Add Your Custom Features
+### Step 5: Add Custom Functionality
 
-Now enhance the template with your specific functionality:
-
-#### Example: Add External API Integration
+#### External API Integration Example
 
 ```javascript
 async function fetchDataFromAPI() {
@@ -486,7 +494,7 @@ async function fetchDataFromAPI() {
 }
 ```
 
-#### Example: Add User Preferences
+#### User Preferences Example
 
 ```javascript
 // Save user preferences
@@ -502,82 +510,76 @@ function loadPreference(key) {
 
 ---
 
-### Step 6: Package and Distribute
+### Step 6: Package and Distribution
 
-Once your plugin is ready:
+Preparation steps for plugin distribution:
 
-1. **Test thoroughly** in all supported editors (Word, Cell, Slide)
-2. **Create documentation** for users
-3. **Package the plugin** (ZIP all files)
-4. **Distribute:**
+1. **Testing:** Verify functionality in all supported editors (Word, Cell, Slide)
+2. **Documentation:** Create user documentation
+3. **Packaging:** Create a ZIP archive of all plugin files
+4. **Distribution options:**
    - Submit to [ONLYOFFICE Marketplace](https://www.onlyoffice.com/app-directory/en)
    - Share on GitHub
-   - Deploy privately to your organization
+   - Deploy to your organization's server
 
-**📚 [Publishing guide →](../tutorials/publishing.md)**
+[Publishing guide →](../tutorials/publishing.md)
 
 ---
 
-### Template Customization Tips
+### Best Practices
 
-**✅ Best Practices:**
-- Always change the GUID to avoid conflicts
+**Required steps:**
+- Change the GUID to avoid conflicts with existing plugins
 - Update version numbers when making changes
-- Test in all supported editors
-- Keep file sizes reasonable (< 5MB total)
+- Test in all supported editor types
+- Keep total file size under 5MB
 - Use CDN for large libraries
 
-**⚠️ Common Pitfalls:**
-- Forgetting to update the GUID (causes conflicts)
-- Not testing in all editor types
-- Hardcoding URLs (use relative paths)
-- Ignoring CORS issues with external APIs
+**Common issues to avoid:**
+- Using duplicate GUIDs (causes plugin conflicts)
+- Insufficient testing across editor types
+- Hardcoded URLs (use relative paths instead)
+- Unhandled CORS issues with external APIs
 
 ---
 
-## 🎯 What's Next?
+## Next Steps
 
-After completing these quick starts, you're ready to:
+After completing these tutorials, refer to the following resources:
 
 <table>
 <tr>
 <td width="33%" align="center">
 
-### 📖 Learn More
+### Documentation
 
-Deepen your knowledge:
+[API Reference →](../interacting-with-editors/overview/overview.md)
 
-[**API Reference →**](../interacting-with-editors/overview/overview.md)
+[Plugin Structure →](../structure/configuration/configuration.md)
 
-[**Plugin Structure →**](../structure/configuration/configuration.md)
-
-[**Best Practices →**](../tutorials/developing/for-web-editors/)
+[Best Practices →](../tutorials/developing/for-web-editors/)
 
 </td>
 <td width="33%" align="center">
 
-### 🎮 Experiment
+### Interactive Tools
 
-Try the interactive tools:
+[Playground →](playground/)
 
-[**Playground →**](playground/)
+[Browse Examples →](../samples/plugin-samples/plugin-samples.md)
 
-[**Browse Examples →**](../samples/plugin-samples/plugin-samples.md)
-
-[**UI Components →**](https://onlyoffice.github.io/storybook/static/)
+[UI Components →](https://onlyoffice.github.io/storybook/static/)
 
 </td>
 <td width="33%" align="center">
 
-### 🚀 Build
+### Tutorials
 
-Start your project:
+[Plugin Tutorial →](../structure/getting-started.md)
 
-[**Plugin Tutorial →**](../structure/getting-started.md)
+[Macro Guide →](../macros/getting-started.md)
 
-[**Macro Guide →**](../macros/getting-started.md)
-
-[**AI Integration →**](../ai/ai-plugin.md)
+[AI Integration →](../ai/ai-plugin.md)
 
 </td>
 </tr>
@@ -585,15 +587,9 @@ Start your project:
 
 ---
 
-## 🆘 Need Help?
+## Support
 
-- 💬 [Developer Forum](https://forum.onlyoffice.com/) — Community support
-- 🐛 [GitHub Issues](https://github.com/ONLYOFFICE/sdkjs-plugins) — Report bugs
-- 📖 [Stack Overflow](https://stackoverflow.com/questions/tagged/onlyoffice) — Q&A archive
-- 📚 [Documentation](../more-information/faq/) — FAQs and guides
-
----
-
-<p align="center">
-<em>💡 <strong>Pro tip:</strong> Start with the Hello World examples, then clone a template that's close to your use case!</em>
-</p>
+- [Developer Forum](https://forum.onlyoffice.com/) — Community support
+- [GitHub Issues](https://github.com/ONLYOFFICE/sdkjs-plugins) — Bug reports
+- [Stack Overflow](https://stackoverflow.com/questions/tagged/onlyoffice) — Q&A archive
+- [Documentation](../more-information/faq/) — FAQs and guides

@@ -1,30 +1,34 @@
 # Getting Started
 
-> **Transform your ONLYOFFICE experience** — Build plugins, automate with macros, or integrate AI. Choose your path below.
+This guide provides an overview of ONLYOFFICE extension capabilities, including plugins, macros, and AI integration. Use this guide to understand available options and select the appropriate approach for your requirements.
+
+> **Note:** Plugin and macro functionality is available in ONLYOFFICE Docs version 7.0 and later. For the latest features including macro recording and enhanced AI integration, version 9.2 or later is recommended.
 
 ---
 
-## 🎯 Choose Your Journey
+## Getting Started Options
 
 <table>
 <tr>
 <td width="50%">
 
-### 🚀 **I want to start coding NOW**
-Jump straight into building with our interactive quick-starts:
+### Quick Start
 
-- **[Quick Start Guides](quick-start-guides.md)** — Complete walkthroughs
-- **[Interactive Playground](playground/)** — Experiment without setup
+Begin development immediately with step-by-step tutorials:
+
+- [Quick Start Guides](quick-start-guides.md) — Complete walkthroughs
+- [Interactive Playground](playground/) — Test code without installation
 
 </td>
 <td width="50%">
 
-### 🧭 **I want to explore first**
-Learn what's possible and find the right approach:
+### Overview and Concepts
 
-- **[What can I build?](#what-you-can-build)** — Real-world examples
-- **[Which approach fits my needs?](#which-approach-would-you-choose)** — Smart decision tree
-- **[Detailed comparison](#detailed-comparison)** — Feature comparison table
+Learn about extension capabilities and implementation approaches:
+
+- [Extension Types](#extension-types) — Available extension methods
+- [Choosing an Approach](#choosing-an-approach) — Decision framework
+- [Feature Comparison](#feature-comparison) — Detailed comparison table
 
 </td>
 </tr>
@@ -32,363 +36,355 @@ Learn what's possible and find the right approach:
 
 ---
 
-## <a name="what-you-can-build"></a>💡 What You Can Build
+## <a name="extension-types"></a>Extension Types
 
-Discover the three ways to extend ONLYOFFICE — each designed for different use cases:
+ONLYOFFICE supports three extension methods, each designed for specific use cases:
 
-### 🔌 **Plugins** — Interactive Tools with Rich UI
+### Plugins
 
-Build sophisticated integrations that feel native to ONLYOFFICE.
+Plugins are HTML/CSS/JavaScript applications embedded in the ONLYOFFICE editor interface. They provide custom UI elements and can integrate with external services.
 
-**Perfect for:**
-- 🎥 Embedding external content ([YouTube](../samples/plugin-samples/youtube.md), media galleries)
-- 🌐 Third-party integrations ([Translator](../samples/plugin-samples/translator.md), [Zotero](../samples/plugin-samples/zotero.md), CRM systems)
-- 🖼️ Advanced processing ([OCR](../samples/plugin-samples/ocr.md), image manipulation, data visualization)
-- 📋 Custom workflows (form builders, approval systems, templates)
+**Use cases:**
+- Embedding external content ([YouTube](../samples/plugin-samples/youtube.md), media galleries)
+- Third-party service integration ([Translator](../samples/plugin-samples/translator.md), [Zotero](../samples/plugin-samples/zotero.md), CRM systems)
+- Advanced document processing ([OCR](../samples/plugin-samples/ocr.md), image manipulation, data visualization)
+- Custom workflows (form builders, approval systems, templates)
 
-**Development profile:**
-- **Time:** 2-7 days | **Skill:** Intermediate | **Tech:** HTML/CSS/JavaScript
+**Development requirements:**
+- **Time:** 2-7 days
+- **Skill level:** Intermediate
+- **Technologies:** HTML, CSS, JavaScript
 - **Distribution:** [ONLYOFFICE Marketplace](https://www.onlyoffice.com/app-directory/en) or private deployment
 
 ---
 
-### ⚡ **Macros** — Instant Automation Scripts
+### Macros
 
-Lightweight JavaScript that runs directly in documents — no installation needed.
+Macros are JavaScript code snippets that execute directly within documents. They require no installation and run in the document context.
 
-**Perfect for:**
-- 🎨 One-click formatting (apply complex styles instantly)
-- 🔄 Batch operations (find-replace across sections, bulk updates)
-- 🧮 Custom calculations (specialized formulas, data transformations)
-- 🧹 Document cleanup (remove metadata, standardize formatting)
+**Use cases:**
+- Automated formatting (applying complex styles)
+- Batch operations (find-replace, bulk updates)
+- Custom calculations (specialized formulas, data transformations)
+- Document cleanup (metadata removal, formatting standardization)
 
-**Development profile:**
-- **Time:** 30 mins - 2 hours | **Skill:** Beginner | **Tech:** JavaScript basics
-- **Distribution:** Copy-paste code or embed in document templates
-
----
-
-### 🤖 **AI Features** — Intelligent Assistants
-
-Plugins enhanced with AI capabilities for next-generation document workflows.
-
-**Perfect for:**
-- ✍️ Writing assistance (grammar, style, content generation)
-- 📊 Smart summarization (extract key points, create abstracts)
-- 🌍 Context-aware translation (preserve formatting and tone)
-- 🔍 Data insights (analyze spreadsheets, generate reports)
-
-**Development profile:**
-- **Time:** 3-10 days | **Skill:** Advanced | **Tech:** Plugin API + AI provider integration
-- **Requirements:** API keys for OpenAI, Claude, or custom AI services
+**Development requirements:**
+- **Time:** 30 minutes - 2 hours
+- **Skill level:** Beginner
+- **Technologies:** JavaScript
+- **Distribution:** Copy-paste or embed in document templates
 
 ---
 
-**👉 [Browse 50+ live examples in the App Directory](https://www.onlyoffice.com/app-directory/en)**
+### AI Integration
+
+AI-enabled plugins combine standard plugin capabilities with AI service integration for advanced document processing.
+
+**Use cases:**
+- Writing assistance (grammar checking, style suggestions, content generation)
+- Document summarization (key point extraction, abstract creation)
+- Context-aware translation (preserving formatting and tone)
+- Data analysis (spreadsheet analysis, report generation)
+
+**Development requirements:**
+- **Time:** 3-10 days
+- **Skill level:** Advanced
+- **Technologies:** Plugin API, AI provider integration (OpenAI, Claude, or custom services)
+- **Additional requirements:** API keys for AI services
 
 ---
 
-## <a name="which-approach-would-you-choose"></a>🧭 Which Approach Would You Choose?
+[Browse 50+ examples in the App Directory](https://www.onlyoffice.com/app-directory/en)
 
-Answer these questions to find your ideal path:
+---
+
+## <a name="choosing-an-approach"></a>Choosing an Approach
+
+Use the following decision tree to select the appropriate extension method:
 
 ```
-START HERE
+START
     │
     ├─ Do you need a custom user interface (buttons, forms, panels)?
     │   │
     │   ├─ YES → Do you need to connect external services (APIs, databases)?
     │   │   │
-    │   │   ├─ YES → BUILD A PLUGIN 🔌
-    │   │   │         (Full power: UI + external integrations)
+    │   │   ├─ YES → Use Plugins
+    │   │   │         (Full capabilities: UI + external integrations)
     │   │   │
-    │   │   └─ NO → BUILD A PLUGIN 🔌
+    │   │   └─ NO → Use Plugins
     │   │             (UI-focused: custom panels and controls)
     │   │
     │   └─ NO → Do you need to connect external services?
     │       │
-    │       ├─ YES → BUILD A PLUGIN 🔌
+    │       ├─ YES → Use Plugins
     │       │         (Background integration without UI)
     │       │
-    │       └─ NO → WRITE A MACRO ⚡
-    │                 (Pure automation, no UI needed)
+    │       └─ NO → Use Macros
+    │                 (Document automation without UI)
     │
-    └─ Want AI-powered features?
+    └─ Do you need AI-powered features?
         │
-        └─ BUILD A PLUGIN WITH AI INTEGRATION 🤖
-           (Combine plugin capabilities with AI providers)
+        └─ Use AI-Enabled Plugins
+           (Plugin capabilities with AI provider integration)
 ```
 
-**Still unsure?** Check our [detailed comparison table](#detailed-comparison) below.
+Refer to the [Feature Comparison](#feature-comparison) table for detailed information.
 
 ---
 
-## <a name="detailed-comparison"></a>📊 Detailed Comparison
+## <a name="feature-comparison"></a>Feature Comparison
 
-Choose the right tool for your project:
+The following table compares the capabilities of each extension method:
 
-| Feature | **Plugins** 🔌 | **Macros** ⚡ | **AI Plugins** 🤖 |
-|---------|---------------|--------------|------------------|
-| **What is it?** | HTML/CSS/JS app embedded in editor | JavaScript code in documents | Plugin + AI provider integration |
-| **Installation** | Required (marketplace or manual) | None (embedded in docs) | Required (like plugins) |
-| **User Interface** | ✅ Full custom UI | ❌ No UI | ✅ Full custom UI |
-| **External APIs** | ✅ Yes (REST, GraphQL, etc.) | ❌ No | ✅ Yes (AI services required) |
-| **Offline Use** | ⚠️ Depends on features | ✅ Fully offline | ❌ Requires internet |
+| Feature | Plugins | Macros | AI-Enabled Plugins |
+|---------|---------|--------|-------------------|
+| **Implementation** | HTML/CSS/JS application embedded in editor | JavaScript code in documents | Plugin with AI provider integration |
+| **Installation** | Required (marketplace or manual) | Not required (embedded in documents) | Required (same as plugins) |
+| **User Interface** | Full custom UI support | No UI | Full custom UI support |
+| **External APIs** | Supported (REST, GraphQL, etc.) | Not supported | Supported (AI services required) |
+| **Offline Functionality** | Depends on implementation | Fully offline | Requires internet connection |
 | **Skill Level** | Intermediate | Beginner | Advanced |
-| **Dev Time** | 2-7 days | 30 mins - 2 hours | 3-10 days |
-| **Distribution** | Marketplace, GitHub, private | Copy-paste, templates | Marketplace, private |
-| **Best For** | Reusable tools, integrations | Personal automation | AI-powered features |
-| **Framework Support** | ✅ React, Vue, Angular | ❌ Vanilla JS only | ✅ Any framework |
+| **Development Time** | 2-7 days | 30 minutes - 2 hours | 3-10 days |
+| **Distribution** | Marketplace, GitHub, private deployment | Copy-paste, templates | Marketplace, private deployment |
+| **Primary Use Case** | Reusable tools, integrations | Personal automation | AI-powered features |
+| **Framework Support** | React, Vue, Angular supported | Vanilla JavaScript only | Any framework supported |
 
 ---
 
-## <a name="real-world-examples"></a>🌟 Real-World Examples
+## <a name="examples"></a>Examples
 
-See what others have built to inspire your own projects:
+The following examples demonstrate real-world implementations:
 
 ### Plugin Examples
 
-**[YouTube Embed](../samples/plugin-samples/youtube.md)** — Insert videos with preview
-- Embeds YouTube videos directly in documents
-- Custom preview and playback controls
+**[YouTube Embed](../samples/plugin-samples/youtube.md)**
+- Embeds YouTube videos in documents
+- Provides preview and playback controls
 - Supports playlists and timestamps
 
-**[Translator](../samples/plugin-samples/translator.md)** — Multi-language translation panel
-- Translate selected text to 100+ languages
+**[Translator](../samples/plugin-samples/translator.md)**
+- Translates selected text to 100+ languages
 - Preserves formatting and document structure
-- Integration with multiple translation APIs
+- Integrates with multiple translation APIs
 
-**[OCR](../samples/plugin-samples/ocr.md)** — Extract text from images
-- Upload images and extract text
-- Multiple language support
-- Insert extracted text directly into documents
+**[OCR](../samples/plugin-samples/ocr.md)**
+- Extracts text from images
+- Supports multiple languages
+- Inserts extracted text directly into documents
 
-**[Zotero](../samples/plugin-samples/zotero.md)** — Citation management
-- Connect to Zotero library
-- Insert citations and bibliographies
-- Multiple citation styles (APA, MLA, Chicago, etc.)
+**[Zotero](../samples/plugin-samples/zotero.md)**
+- Connects to Zotero citation library
+- Inserts citations and bibliographies
+- Supports multiple citation styles (APA, MLA, Chicago)
 
-**📚 [Browse 50+ plugin examples →](../samples/plugin-samples/plugin-samples.md)**
+[Browse 50+ plugin examples →](../samples/plugin-samples/plugin-samples.md)
 
 ---
 
 ### Macro Examples
 
-**Auto-format tables** — Apply alternating row colors and borders
-```javascript
-// Automatically formats all tables in the document
-```
+**Table Formatting**
+- Applies alternating row colors and borders to tables
 
-**Bulk find-replace** — Use regex patterns for complex replacements
-```javascript
-// Find and replace with advanced pattern matching
-```
+**Pattern-Based Text Replacement**
+- Performs complex find-replace operations using regex
 
-**Custom spreadsheet functions** — Business-specific calculations
-```javascript
-// Add custom formulas for specialized calculations
-```
+**Custom Spreadsheet Functions**
+- Implements business-specific calculations
 
-**Document cleanup** — Remove metadata and standardize formatting
-```javascript
-// Clean up document formatting and metadata
-```
+**Document Cleanup**
+- Removes metadata and standardizes formatting
 
-**📚 [Browse macro examples →](../samples/macro-samples/macro-samples.md)**
+[Browse macro examples →](../samples/macro-samples/macro-samples.md)
 
 ---
 
-### AI Feature Examples
+### AI Integration Examples
 
-**Grammar and style checker** — Intelligent writing assistance
-- Real-time grammar and style suggestions
-- Context-aware corrections
-- Multiple writing styles (formal, casual, academic)
+**Grammar and Style Checker**
+- Provides real-time grammar and style suggestions
+- Offers context-aware corrections
+- Supports multiple writing styles (formal, casual, academic)
 
-**Document summarizer** — Extract key points automatically
-- Generate executive summaries
-- Extract action items and key points
-- Customizable summary length
+**Document Summarizer**
+- Generates executive summaries
+- Extracts action items and key points
+- Allows customizable summary length
 
-**Smart data analysis** — Natural language queries for spreadsheets
-- Ask questions about your data in plain English
-- Generate insights and visualizations
-- Automated report generation
+**Data Analysis Assistant**
+- Processes natural language queries about spreadsheet data
+- Generates insights and visualizations
+- Creates automated reports
 
-**📚 [Browse AI function examples →](../samples/custom-ai-functions-samples/custom-ai-functions-samples.md)**
+[Browse AI function examples →](../samples/custom-ai-functions-samples/custom-ai-functions-samples.md)
 
 ---
 
-## <a name="common-questions"></a>❓ Common Questions
+## <a name="faq"></a>Frequently Asked Questions
 
 <details>
 <summary><strong>Can plugins access files outside ONLYOFFICE?</strong></summary>
 
-No. Plugins run in a sandboxed browser environment and can only:
-- Access the current document content
-- Make HTTP requests to external APIs (if configured)
-- Store data in browser localStorage
+No. Plugins run in a sandboxed browser environment with the following capabilities:
+- Access to current document content
+- HTTP requests to external APIs (if configured)
+- Browser localStorage for data storage
 
-They **cannot** access your local filesystem or other applications.
+Plugins cannot access the local filesystem or other applications.
 </details>
 
 <details>
-<summary><strong>Do I need a server to run plugins?</strong></summary>
+<summary><strong>Do plugins require a server?</strong></summary>
 
-**For development:** No, you can develop plugins entirely client-side using local files.
+**Development:** No server required. Plugins can be developed entirely client-side using local files.
 
-**For production:** Depends on your plugin:
-- **Client-only plugins** (no external APIs) → No server needed
-- **API integrations** → You'll need a backend or use serverless functions
-- **AI features** → Requires API endpoints (your server or third-party services)
+**Production:** Server requirements depend on plugin functionality:
+- **Client-only plugins** (no external APIs): No server required
+- **API integrations**: Backend server or serverless functions required
+- **AI features**: API endpoints required (self-hosted or third-party services)
 </details>
 
 <details>
-<summary><strong>Can I monetize my plugins?</strong></summary>
+<summary><strong>Can plugins be monetized?</strong></summary>
 
-Yes! You have several options:
-- Sell licenses through your own website
-- Offer freemium models (basic free, premium paid)
-- Provide paid support and customization
-- The ONLYOFFICE Marketplace currently hosts free plugins, but you can distribute paid plugins independently
+Yes. Available monetization options:
+- License sales through your own website
+- Freemium models (basic free, premium paid)
+- Paid support and customization services
+- Independent distribution of paid plugins (ONLYOFFICE Marketplace currently hosts free plugins)
 </details>
 
 <details>
-<summary><strong>Can I use React, Vue, or Angular?</strong></summary>
+<summary><strong>Are frontend frameworks supported?</strong></summary>
 
-Absolutely! You can use any frontend framework. Just ensure:
-- Final output is standard HTML/CSS/JS
-- Bundle size is reasonable (< 5MB recommended)
-- The plugin loads in an iframe environment
+Yes. Any frontend framework can be used for plugin development. Requirements:
+- Final output must be standard HTML/CSS/JS
+- Bundle size should be under 5MB (recommended)
+- Plugin must load correctly in an iframe environment
 
-Many developers use Vite or Webpack to bundle framework-based plugins.
+Common build tools: Vite, Webpack
 </details>
 
 <details>
-<summary><strong>How do I debug plugins?</strong></summary>
+<summary><strong>How are plugins debugged?</strong></summary>
 
-Use browser DevTools:
-1. Right-click on your plugin UI
+Use browser DevTools for debugging:
+1. Right-click on the plugin UI
 2. Select "Inspect Element"
-3. Use Console, Network, and Sources tabs as you would for any web app
+3. Use Console, Network, and Sources tabs
 
 [Detailed debugging guide →](../tutorials/developing/for-web-editors.md)
 </details>
 
 <details>
-<summary><strong>What are the limitations I should know about?</strong></summary>
+<summary><strong>What are the main limitations?</strong></summary>
 
-Key constraints to consider:
-- Plugin packages must be < 50MB (use CDN for large libraries)
-- Some browser APIs are blocked in iframe (use plugin API alternatives)
-- Heavy operations can slow the editor (use Web Workers)
+Key constraints:
+- Plugin package size limit: 50MB (use CDN for large libraries)
+- Some browser APIs are blocked in iframe context (use plugin API alternatives)
+- Heavy operations may impact editor performance (use Web Workers)
 - CORS restrictions apply for external APIs
-- External APIs won't work offline (implement fallbacks)
-- Not all features work in all editors (check `EditorsSupport` in config)
+- External APIs require internet connectivity (implement offline fallbacks)
+- Feature availability varies by editor type (check `EditorsSupport` in configuration)
 </details>
 
-**[View all FAQs →](../more-information/faq/)**
+[View all FAQs →](../more-information/faq/)
 
 ---
 
-## <a name="troubleshooting"></a>🚨 Troubleshooting
+## <a name="troubleshooting"></a>Troubleshooting
 
 ### Plugin Issues
 
 | Problem | Solution |
 |---------|----------|
-| **Plugin doesn't appear** | • Check `config.json` has unique GUID<br/>• Verify file paths are correct<br/>• Restart ONLYOFFICE |
-| **JavaScript errors** | • Open browser DevTools (F12)<br/>• Check Console for error messages<br/>• Verify plugin.js is loaded |
-| **API methods fail** | • Ensure ONLYOFFICE version supports the method<br/>• Check method syntax in [API reference](../interacting-with-editors/overview/overview.md)<br/>• Verify editor type compatibility |
+| **Plugin not visible** | • Verify `config.json` contains a unique GUID<br/>• Check file paths are correct<br/>• Restart ONLYOFFICE |
+| **JavaScript errors** | • Open browser DevTools (F12)<br/>• Check Console for error messages<br/>• Verify `plugins.js` is loaded |
+| **API method failures** | • Confirm ONLYOFFICE version supports the method<br/>• Verify method syntax in [API reference](../interacting-with-editors/overview/overview.md)<br/>• Check editor type compatibility |
 
 ### Macro Issues
 
 | Problem | Solution |
 |---------|----------|
-| **Macro doesn't run** | • Check macros are enabled in Tools → Settings<br/>• Look for syntax errors in macro editor<br/>• Verify API method names are correct |
-| **Unexpected results** | • Add `console.log()` for debugging<br/>• Test each step individually<br/>• Check document state before running |
+| **Macro does not execute** | • Verify macros are enabled in Tools → Settings<br/>• Check for syntax errors in macro editor<br/>• Confirm API method names are correct |
+| **Unexpected results** | • Add `console.log()` statements for debugging<br/>• Test each operation individually<br/>• Verify document state before execution |
 
-**Need more help?**
-- 💬 [Developer Forum](https://forum.onlyoffice.com/) — Community support
-- 🐛 [GitHub Issues](https://github.com/ONLYOFFICE/sdkjs-plugins) — Report bugs
-- 📖 [Stack Overflow](https://stackoverflow.com/questions/tagged/onlyoffice) — Q&A archive
-
----
-
-## <a name="resources"></a>🎁 Resources
-
-### 🛠️ Development Tools
-
-- **[Interactive Playground](playground/)** — Test code without installation
-- **[UI Component Library](https://onlyoffice.github.io/storybook/static/)** — Pre-built components
-- **[Plugin Templates](https://github.com/ONLYOFFICE/sdkjs-plugins)** — Starter projects
-- **Browser DevTools** — Your best debugging friend
-
-### 📦 Sample Code
-
-- **[Plugin Examples](../samples/plugin-samples/plugin-samples.md)** — 50+ working examples
-- **[Macro Examples](../samples/macro-samples/macro-samples.md)** — Common automation scripts
-- **[AI Function Examples](../samples/custom-ai-functions-samples/custom-ai-functions-samples.md)** — AI integration patterns
-
-### 📚 Documentation
-
-- **[API Reference](../interacting-with-editors/overview/overview.md)** — Complete API documentation
-- **[Plugin Structure](../structure/configuration/configuration.md)** — Configuration guide
-- **[Macro Guide](../macros/writing-macros.md)** — Macro development
-- **[AI Integration](../ai/ai-plugin.md)** — AI plugin setup
-
-### 👥 Community
-
-- **[Forum](https://forum.onlyoffice.com/)** — Ask questions, share projects
-- **[GitHub](https://github.com/ONLYOFFICE/sdkjs-plugins)** — Source code, issues, contributions
-- **[Stack Overflow](https://stackoverflow.com/questions/tagged/onlyoffice)** — Technical Q&A
-- **[Changelog](../more-information/changelog/)** — Latest API updates
+**Additional support:**
+- [Developer Forum](https://forum.onlyoffice.com/) — Community support
+- [GitHub Issues](https://github.com/ONLYOFFICE/sdkjs-plugins) — Bug reports
+- [Stack Overflow](https://stackoverflow.com/questions/tagged/onlyoffice) — Q&A archive
 
 ---
 
-## <a name="next-steps"></a>🎯 Next Steps
+## <a name="resources"></a>Resources
+
+### Development Tools
+
+- [Interactive Playground](playground/) — Test code without installation
+- [UI Component Library](https://onlyoffice.github.io/storybook/static/) — Pre-built components
+- [Plugin Templates](https://github.com/ONLYOFFICE/sdkjs-plugins) — Starter projects
+- Browser DevTools — Debugging tools
+
+### Sample Code
+
+- [Plugin Examples](../samples/plugin-samples/plugin-samples.md) — 50+ working examples
+- [Macro Examples](../samples/macro-samples/macro-samples.md) — Common automation scripts
+- [AI Function Examples](../samples/custom-ai-functions-samples/custom-ai-functions-samples.md) — AI integration patterns
+
+### Documentation
+
+- [API Reference](../interacting-with-editors/overview/overview.md) — Complete API documentation
+- [Plugin Structure](../structure/configuration/configuration.md) — Configuration guide
+- [Macro Guide](../macros/writing-macros.md) — Macro development
+- [AI Integration](../ai/ai-plugin.md) — AI plugin setup
+
+### Community
+
+- [Forum](https://forum.onlyoffice.com/) — Questions and project sharing
+- [GitHub](https://github.com/ONLYOFFICE/sdkjs-plugins) — Source code, issues, contributions
+- [Stack Overflow](https://stackoverflow.com/questions/tagged/onlyoffice) — Technical Q&A
+- [Changelog](../more-information/changelog/) — API updates
+
+---
+
+## <a name="next-steps"></a>Next Steps
 
 <table>
 <tr>
 <td width="33%" align="center">
 
-### 🏃 Start Building
+### Start Development
 
-**Ready to code?**
+[Quick Start Guides →](quick-start-guides.md)
 
-[**Quick Start Guides →**](quick-start-guides.md)
+[Plugin Tutorial →](../structure/getting-started.md)
 
-[**Plugin Tutorial →**](../structure/getting-started.md)
+[Macro Tutorial →](../macros/getting-started.md)
 
-[**Macro Tutorial →**](../macros/getting-started.md)
-
-[**AI Integration →**](../ai/ai-plugin.md)
+[AI Integration →](../ai/ai-plugin.md)
 
 </td>
 <td width="33%" align="center">
 
-### 🎮 Experiment
+### Experiment
 
-**Want to try first?**
+[Open Playground →](playground/)
 
-[**Open Playground →**](playground/)
+[Browse Examples →](https://github.com/ONLYOFFICE/sdkjs-plugins)
 
-[**Browse Examples →**](https://github.com/ONLYOFFICE/sdkjs-plugins)
-
-[**Watch Tutorials →**](https://www.youtube.com/onlyoffice)
+[Watch Tutorials →](https://www.youtube.com/onlyoffice)
 
 </td>
 <td width="33%" align="center">
 
-### 📖 Learn More
+### Learn More
 
-**Need deeper knowledge?**
+[API Reference →](../interacting-with-editors/overview/overview.md)
 
-[**API Reference →**](../interacting-with-editors/overview/overview.md)
+[Best Practices →](../tutorials/developing/for-web-editors/)
 
-[**Best Practices →**](../tutorials/developing/for-web-editors/)
-
-[**Publishing Guide →**](../tutorials/publishing.md)
+[Publishing Guide →](../tutorials/publishing.md)
 
 </td>
 </tr>
@@ -396,10 +392,4 @@ Key constraints to consider:
 
 ---
 
-<p align="center">
-<em>💡 <strong>Pro tip:</strong> Start with our <a href="quick-start-guides.md">Quick Start Guides</a>, then explore the playground to see what's possible!</em>
-</p>
-
-<p align="center">
-<em>Questions or feedback? Use the thumbs up/down buttons below or <a href="https://forum.onlyoffice.com/">join our forum</a>.</em>
-</p>
+For questions or feedback, visit the [developer forum](https://forum.onlyoffice.com/).
