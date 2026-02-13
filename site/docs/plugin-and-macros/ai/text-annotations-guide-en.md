@@ -2,7 +2,7 @@
 
 ONLYOFFICE 9.2.0 introduced an API extension for working with text annotations — visual underlines that highlight text sections and allow you to associate metadata with them.
 
-In this article, we explore three new API methods and demonstrate, through a practical example, how to create a plugin for an AI assistant that analyzes text.
+This guide covers three new API methods and demonstrates their usage through a practical plugin example for an AI assistant that analyzes text.
 
 ## New API methods
 
@@ -37,7 +37,7 @@ const assistant = {
 }
 ```
 
-## Example: Creating an assistant
+## Creating an assistant
 
 - Name: *Date Corrector*
 - Type: *Replace + Hint*
@@ -45,7 +45,7 @@ const assistant = {
 
 ### Running the assistant
 
-When the assistant runs, the user's query is refined with additional rules to ensure the AI's response follows the required JSON format. For instance, to provide replacements and explanations, we need to identify the exact text fragment being targeted.
+When the assistant runs, the user's query is refined with additional rules to ensure the AI's response follows the required JSON format. For instance, to provide replacements and explanations, the exact text fragment being targeted must be identified.
 
 ```js
 let prompt = `You are a multi-disciplinary text analysis assistant.  
@@ -68,7 +68,7 @@ prompt += "TEXT TO ANALYZE:\n```\n" + paragraph_text + "\n```\n\n";
 
 You can analyze either the entire document (all paragraphs) or just the selected fragment. This example focuses on processing selected paragraphs.
 
-We retrieve paragraph text by subscribing to the [`onParagraphText`](https://api.onlyoffice.com/docs/plugin-and-macros/interacting-with-editors/text-document-api/Events/onParagraphText/) event.
+Paragraph text can be retrieved by subscribing to the [`onParagraphText`](https://api.onlyoffice.com/docs/plugin-and-macros/interacting-with-editors/text-document-api/Events/onParagraphText/) event.
 
 ```js
 window.Asc.plugin.attachEditorEvent("onParagraphText", (data) => {
@@ -80,7 +80,7 @@ window.Asc.plugin.attachEditorEvent("onParagraphText", (data) => {
 });
 ```
 
-While the above example provides access to every paragraph, we only need the IDs of those currently selected. This is achieved using the [`GetAllParagraphs`](https://api.onlyoffice.com/docs/office-api/usage-api/text-document-api/ApiRange/Methods/GetAllParagraphs/) and [`GetInternalId`](https://api.onlyoffice.com/docs/office-api/usage-api/text-document-api/ApiParagraph/Methods/GetInternalId/) methods:
+While the above example provides access to every paragraph, only the IDs of those currently selected are needed. This is achieved using the [`GetAllParagraphs`](https://api.onlyoffice.com/docs/office-api/usage-api/text-document-api/ApiRange/Methods/GetAllParagraphs/) and [`GetInternalId`](https://api.onlyoffice.com/docs/office-api/usage-api/text-document-api/ApiParagraph/Methods/GetInternalId/) methods:
 
 ```js
 const range = Api.GetDocument().GetRangeBySelect();
@@ -102,7 +102,7 @@ let aiAnswer = {
 }
 ```
 
-After sending the request to the AI, we receive a response containing all identified matches with detailed attributes.
+After sending the request to the AI, a response is received containing all identified matches with detailed attributes.
 
 ### Adding annotations
 
@@ -114,7 +114,7 @@ window.Asc.plugin.executeMethod("AnnotateParagraph", [{
     name: "customAssistant_" + assistantId, // assistant ID
     paragraphId: "p1", // value taken from paragraph information
     recalcId: "r12", // value taken from paragraph information
-    ranges: [ // what we need to calculate based on aiAnswer.origin and aiAnswer.occurrence
+    ranges: [ // calculated based on aiAnswer.origin and aiAnswer.occurrence
         { start: 5, length: 10, id: "a1" } 
         // start is the index of the first character of the match in the paragraph
     ]
@@ -123,13 +123,13 @@ window.Asc.plugin.executeMethod("AnnotateParagraph", [{
 
 ### Working with annotations
 
-Once annotations are added, we need to handle user interaction. Clicking an annotation should trigger a popup displaying the original text, the suggested replacement, and a brief explanation, along with **Accept** and **Reject** buttons. This is managed through three specific events:
+Once annotations are added, user interaction must be handled. Clicking an annotation should trigger a popup displaying the original text, the suggested replacement, and a brief explanation, along with **Accept** and **Reject** buttons. This is managed through three specific events:
 
 1. [`onBlurAnnotation`](https://api.onlyoffice.com/docs/plugin-and-macros/interacting-with-editors/text-document-api/Events/onBlurAnnotation/) — Triggered when an annotation loses focus.
 2. [`onClickAnnotation`](https://api.onlyoffice.com/docs/plugin-and-macros/interacting-with-editors/text-document-api/Events/onClickAnnotation/) — Triggered when the user clicks an annotation.
 3. [`onFocusAnnotation`](https://api.onlyoffice.com/docs/plugin-and-macros/interacting-with-editors/text-document-api/Events/onFocusAnnotation/) — Triggered when an annotation receives focus.
 
-All three events return `{name, paragraphId, ranges}`. For this implementation, we focus on two: `onClickAnnotation` (to show the popup) and `onBlurAnnotation` (to hide it).
+All three events return `{name, paragraphId, ranges}`. For this implementation, two events are used: `onClickAnnotation` (to show the popup) and `onBlurAnnotation` (to hide it).
 
 ```js
 let popup = new window.Asc.PluginWindow();
@@ -158,7 +158,7 @@ window.Asc.plugin.attachEditorEvent("onBlurAnnotation", (annotatRanges) => {
 });
 ```
 
-To complete the workflow, we need to allow users to either apply the AI's suggestion or reject it.
+To complete the workflow, users must be able to either apply the AI's suggestion or reject it.
 
 ### Replacing annotation text
 
