@@ -4,77 +4,383 @@ sidebar_position: -5
 
 # Writing macros
 
-Now that you know how macros work, try to write your own macro. We have a table and need to color the alternate table rows (odd will be colored green, even will become red). The table contains 200 rows and columns from **A** to **S**. It would take a lot of time to do that manually. So, using macros will be the best solution for this problem.
+This guide covers the syntax, common operations, and best practices for writing ONLYOFFICE macros using the Office JavaScript API.
 
-1. Open ONLYOFFICE editors and create a new spreadsheet.
-2. Now open the **View** tab and select **Macros**. The macros window will pop up. You will be presented with the basic function wrapper which will allow you to enter the necessary code:
+## Basic syntax & structure
 
-    <!-- This code is related to macros. -->
+All macros use this template:
 
-    <!-- eslint-skip -->
+```javascript
+(function () {
+  "use strict";
 
-    ``` ts
-    (function () {
-      // ... your code goes here ...
-    })()
-    ```
-
-3. Let's consult the [Office API documentation](../../office-api/usage-api/spreadsheet-api/spreadsheet-api.md) to see what we need to complete our task:
-
-   - First, get the current worksheet using the [GetActiveSheet](../../office-api/usage-api/spreadsheet-api/Api/Methods/GetActiveSheet.md) method:
-
-     ``` ts
-     let worksheet = Api.GetActiveSheet();
-     ```
-
-   - Then create a loop to run from the first to the last row:
-
-     ``` ts
-     for (let i = 1; i < 200; i += 2) {
-       // TODO: Implement functionality here
-     }
-     ```
-
-   - Set two variables: one for odd rows, the second for even rows:
-
-     ``` ts
-     let rowOdd = i;
-     let rowEven = i + 1;
-     ```
-
-   - Now that we can access both the odd and even rows, let's color them in proper colors. Set the desired colors using the [CreateColorFromRGB](../../office-api/usage-api/spreadsheet-api/Api/Methods/CreateColorFromRGB.md) method. Get the cell range within the row using the [GetRange](../../office-api/usage-api/spreadsheet-api/ApiWorksheet/Methods/GetRange.md) method and set the color for the odd rows:
-
-     ``` ts
-     worksheet.GetRange(`A${rowOdd}:S${rowOdd}`).SetFillColor(Api.CreateColorFromRGB(138, 181, 155));
-     ```
-
-     The same is for the even rows, but with a different color:
-
-     ``` ts
-     worksheet.GetRange(`A${rowEven}:S${rowEven}`).SetFillColor(Api.CreateColorFromRGB(216, 227, 220));
-     ```
-
-Now let's sum it up with the complete script code:
-
-<!-- This code is related to macros. -->
-
-<!-- eslint-skip -->
-
-``` ts
-(function()
-{
-    let worksheet = Api.GetActiveSheet();
-    for (let i = 1; i < 200; i += 2) {
-        let rowOdd = i, rowEven = i + 1;
-        worksheet.GetRange("A" + rowOdd + ":S" + rowOdd).SetFillColor(Api.CreateColorFromRGB(138, 181, 155));
-        worksheet.GetRange("A" + rowEven + ":S" + rowEven).SetFillColor(Api.CreateColorFromRGB(216, 227, 220));
-    }
+  // Your code here
 })();
 ```
 
-Paste the code above to the macros window and click ![Play icon](/assets/images/plugins/play.svg). The table rows from 1 to 200 will be colored alternately in less than a second.
+**Essential API objects:**
 
-![Alternate raws](/assets/images/plugins/alternate-raws.png)
+```javascript
+// Document
+var oDocument = Api.GetDocument();
+
+// Paragraph
+var oParagraph = Api.CreateParagraph();
+oParagraph.AddText("Sample text");
+
+// Table
+var oTable = Api.CreateTable(3, 4); // 3 columns, 4 rows
+
+// Selection
+var oRange = oDocument.GetRangeBySelect();
+```
+
+---
+
+## Common operations
+
+### Text manipulation
+
+**Insert text:**
+
+```javascript
+(function () {
+  var oDocument = Api.GetDocument();
+  var oParagraph = Api.CreateParagraph();
+  oParagraph.AddText("New text");
+  oDocument.Push(oParagraph);
+})();
+```
+
+**Find and replace:**
+
+```javascript
+(function () {
+  var oDocument = Api.GetDocument();
+  oDocument.Search("old text", true, false, false);
+  var oRange = oDocument.GetRangeBySelect();
+  if (oRange) {
+    oRange.SetText("new text");
+  }
+})();
+```
+
+**Transform selected text:**
+
+```javascript
+(function () {
+  var oDocument = Api.GetDocument();
+  var oRange = oDocument.GetRangeBySelect();
+  if (oRange) {
+    var text = oRange.GetText();
+    oRange.SetText(text.toUpperCase());
+  }
+})();
+```
+
+---
+
+### Formatting
+
+**Text formatting:**
+
+```javascript
+(function () {
+  var oParagraph = Api.CreateParagraph();
+  oParagraph.AddText("Formatted text");
+  oParagraph.SetBold(true);
+  oParagraph.SetItalic(true);
+  oParagraph.SetFontSize(24); // Half-points (24 = 12pt)
+  oParagraph.SetFontFamily("Arial");
+  oParagraph.SetColor(255, 0, 0); // RGB
+  Api.GetDocument().Push(oParagraph);
+})();
+```
+
+**Paragraph alignment:**
+
+```javascript
+(function () {
+  var oParagraph = Api.CreateParagraph();
+  oParagraph.AddText("Centered text");
+  oParagraph.SetJc("center"); // "left", "center", "right", "justify"
+  Api.GetDocument().Push(oParagraph);
+})();
+```
+
+**Highlighting:**
+
+```javascript
+(function () {
+  var oDocument = Api.GetDocument();
+  var oRange = oDocument.GetRangeBySelect();
+  if (oRange) {
+    oRange.SetHighlight("yellow");
+  }
+})();
+```
+
+---
+
+### Tables & data
+
+**Create and populate table:**
+
+```javascript
+(function () {
+  var oDocument = Api.GetDocument();
+  var oTable = Api.CreateTable(3, 3);
+
+  // Header row
+  oTable.GetCell(0, 0).GetContent().GetElement(0).AddText("Name");
+  oTable.GetCell(0, 1).GetContent().GetElement(0).AddText("Age");
+  oTable.GetCell(0, 2).GetContent().GetElement(0).AddText("City");
+
+  // Data row
+  oTable.GetCell(1, 0).GetContent().GetElement(0).AddText("John");
+  oTable.GetCell(1, 1).GetContent().GetElement(0).AddText("30");
+  oTable.GetCell(1, 2).GetContent().GetElement(0).AddText("NYC");
+
+  oDocument.Push(oTable);
+})();
+```
+
+**Format table cells:**
+
+```javascript
+(function () {
+  var oTable = Api.CreateTable(2, 2);
+  var oCell = oTable.GetCell(0, 0);
+
+  // Background color
+  oCell.SetShd("clear", 200, 200, 200);
+
+  // Cell content
+  var oCellContent = oCell.GetContent().GetElement(0);
+  oCellContent.AddText("Header");
+  oCellContent.SetBold(true);
+
+  Api.GetDocument().Push(oTable);
+})();
+```
+
+**Table borders:**
+
+```javascript
+(function () {
+  var oTable = Api.CreateTable(3, 3);
+
+  // Parameters: type, size, space, R, G, B
+  oTable.SetTableBorderTop("single", 8, 0, 0, 0, 0);
+  oTable.SetTableBorderBottom("single", 8, 0, 0, 0, 0);
+  oTable.SetTableBorderLeft("single", 8, 0, 0, 0, 0);
+  oTable.SetTableBorderRight("single", 8, 0, 0, 0, 0);
+  oTable.SetTableBorderInsideH("single", 8, 0, 0, 0, 0);
+  oTable.SetTableBorderInsideV("single", 8, 0, 0, 0, 0);
+
+  Api.GetDocument().Push(oTable);
+})();
+```
+
+---
+
+### Document navigation
+
+**Cursor movement:**
+
+```javascript
+(function () {
+  var oDocument = Api.GetDocument();
+  oDocument.MoveCursorToStart();
+  // or
+  oDocument.MoveCursorToEnd();
+})();
+```
+
+**Select all content:**
+
+```javascript
+(function () {
+  var oDocument = Api.GetDocument();
+  oDocument.SelectAllContent();
+  var oRange = oDocument.GetRangeBySelect();
+})();
+```
+
+**Iterate paragraphs:**
+
+```javascript
+(function () {
+  var oDocument = Api.GetDocument();
+  var nCount = oDocument.GetElementsCount();
+
+  for (var i = 0; i < nCount; i++) {
+    var oElement = oDocument.GetElement(i);
+    if (oElement.GetClassType() === "paragraph") {
+      console.log("Paragraph " + i + ": " + oElement.GetText());
+    }
+  }
+})();
+```
+
+---
+
+## Best practices
+
+### Code organization
+
+**Use descriptive names:**
+
+```javascript
+// Good
+var headerParagraph = Api.CreateParagraph();
+var customerTable = Api.CreateTable(3, 5);
+
+// Avoid
+var p = Api.CreateParagraph();
+var t = Api.CreateTable(3, 5);
+```
+
+**Break into functions:**
+
+```javascript
+(function () {
+  function createHeader(text) {
+    var oParagraph = Api.CreateParagraph();
+    oParagraph.AddText(text);
+    oParagraph.SetBold(true);
+    oParagraph.SetFontSize(28);
+    return oParagraph;
+  }
+
+  var oDocument = Api.GetDocument();
+  oDocument.Push(createHeader("Document Title"));
+})();
+```
+
+### Performance
+
+**Minimize API calls in loops:**
+
+```javascript
+// Efficient
+var oDocument = Api.GetDocument(); // Called once
+for (var i = 0; i < 100; i++) {
+  var oParagraph = Api.CreateParagraph();
+  oParagraph.AddText("Line " + i);
+  oDocument.Push(oParagraph);
+}
+```
+
+### Error handling
+
+**Check for null values:**
+
+```javascript
+(function () {
+  var oDocument = Api.GetDocument();
+  var oRange = oDocument.GetRangeBySelect();
+
+  if (oRange) {
+    var text = oRange.GetText();
+    oRange.SetText(text.toUpperCase());
+  } else {
+    console.log("No text selected");
+  }
+})();
+```
+
+---
+
+## Code snippets library
+
+**Find and replace all:**
+
+```javascript
+(function () {
+  var oDocument = Api.GetDocument();
+  var searchText = "old";
+  var replaceText = "new";
+  var count = 0;
+
+  oDocument.MoveCursorToStart();
+
+  while (oDocument.Search(searchText, true, false, false)) {
+    var oRange = oDocument.GetRangeBySelect();
+    if (oRange) {
+      oRange.SetText(replaceText);
+      count++;
+    }
+  }
+
+  console.log("Replaced " + count + " instances");
+})();
+```
+
+**Word count:**
+
+```javascript
+(function () {
+  var oDocument = Api.GetDocument();
+  var oRange = oDocument.GetRangeBySelect();
+
+  if (oRange) {
+    var text = oRange.GetText();
+    var words = text.split(/\s+/).filter(Boolean);
+
+    var oParagraph = Api.CreateParagraph();
+    oParagraph.AddText("\nWord count: " + words.length);
+    oDocument.Push(oParagraph);
+  }
+})();
+```
+
+**Formatted table with alternating rows:**
+
+```javascript
+(function () {
+  var oDocument = Api.GetDocument();
+  var oTable = Api.CreateTable(3, 5);
+
+  // Alternate row colors
+  for (var row = 0; row < 5; row++) {
+    for (var col = 0; col < 3; col++) {
+      var oCell = oTable.GetCell(row, col);
+      if (row % 2 === 0) {
+        oCell.SetShd("clear", 240, 240, 240);
+      }
+    }
+  }
+
+  // Borders
+  oTable.SetTableBorderTop("single", 8, 0, 0, 0, 0);
+  oTable.SetTableBorderBottom("single", 8, 0, 0, 0, 0);
+  oTable.SetTableBorderInsideH("single", 8, 0, 0, 0, 0);
+  oTable.SetTableBorderInsideV("single", 8, 0, 0, 0, 0);
+
+  oDocument.Push(oTable);
+})();
+```
+
+**Apply formatting to all paragraphs:**
+
+```javascript
+(function () {
+  var oDocument = Api.GetDocument();
+  var nCount = oDocument.GetElementsCount();
+
+  for (var i = 0; i < nCount; i++) {
+    var oElement = oDocument.GetElement(i);
+    if (oElement.GetClassType() === "paragraph") {
+      oElement.SetFontFamily("Arial");
+      oElement.SetFontSize(22);
+      oElement.SetJc("justify");
+    }
+  }
+})();
+```
+
+---
 
 ## Generating macros using AI plugin
 
@@ -96,13 +402,15 @@ If you want to speed up the process, starting from version 9.0, you can use the 
 
 6. Click ![Play icon](/assets/images/plugins/play.svg) to test the script.
 
+---
+
 ## Subscribing to events
 
 To subscribe to the specified event and call the callback function when the event fires, use the [attachEvent](../../office-api/usage-api/text-document-api/Api/Methods/attachEvent.md) method.
 
 For example, to subscribe to an event when a hyperlink in a document is clicked, use the following lines:
 
-``` ts
+```javascript
 Api.attachEvent("asc_onHyperlinkClick", () => {
   console.log("HYPERLINK!!!");
 })
@@ -111,6 +419,8 @@ Api.attachEvent("asc_onHyperlinkClick", () => {
 When you click any hyperlink in a document, the **asc\_onHyperlinkClick** event will be executed and the *"HYPERLINK!!!"* message will appear in the console.
 
 ![Click hyperlink](/assets/images/plugins/click-hyperlink.png)
+
+---
 
 ## Assigning macros
 
