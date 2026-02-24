@@ -10,7 +10,7 @@ ONLYOFFICE macros are JavaScript code snippets that automate document tasks usin
 
 ---
 
-## Getting Started
+## Getting started
 
 ### What are macros?
 
@@ -118,7 +118,7 @@ To rename/copy/delete: Click ![Dots icon](/assets/images/plugins/dots.svg#gh-lig
 
 ---
 
-## Additional Resources
+## Additional resources
 
 **Documentation:**
 
@@ -140,13 +140,13 @@ To rename/copy/delete: Click ![Dots icon](/assets/images/plugins/dots.svg#gh-lig
 
 ---
 
-## Next Steps
+## Next steps
 
 <table>
 <tr>
 <td width="50%" align="center">
 
-### Learn More
+### Learn more
 
 [Writing Macros →](./writing-macros.md)
 
@@ -157,7 +157,7 @@ To rename/copy/delete: Click ![Dots icon](/assets/images/plugins/dots.svg#gh-lig
 </td>
 <td width="50%" align="center">
 
-### Explore Examples
+### Explore examples
 
 [Macro Samples →](../samples/macro-samples/macro-samples.md)
 

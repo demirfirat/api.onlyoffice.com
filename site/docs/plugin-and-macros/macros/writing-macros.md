@@ -6,7 +6,7 @@ sidebar_position: -5
 
 This guide covers the syntax, common operations, and best practices for writing ONLYOFFICE macros using the Office JavaScript API.
 
-## Basic syntax & structure
+## Basic syntax and structure
 
 All macros use this template:
 
@@ -122,7 +122,7 @@ var oRange = oDocument.GetRangeBySelect();
 
 ---
 
-### Tables & data
+### Tables and data
 
 **Create and populate table:**
 
