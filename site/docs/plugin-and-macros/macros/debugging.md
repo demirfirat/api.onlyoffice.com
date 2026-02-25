@@ -70,7 +70,52 @@ This guide explains how to find and fix problems in ONLYOFFICE macros, covering 
 
 > Use numbered or labeled checkpoints (e.g., `[1]`, `[INIT]`) to quickly identify where execution stops when a macro fails silently.
 
----
+## Using the debugger
+
+You can pause macro execution at any point using the `debugger` statement. When the browser developer tools are open, this acts as a breakpoint — execution stops at that line and you can inspect variable values, the call stack, and step through the code.
+
+### Setting a breakpoint with `debugger`
+
+Insert the `debugger` statement at the line where you want execution to pause:
+
+<!-- This code is related to macros. -->
+
+<!-- eslint-skip -->
+
+```ts
+debugger;
+let doc = Api.GetDocument();
+let paragraph = doc.GetElement(0);
+paragraph.AddText("Hello world!");
+```
+
+To run your script in debug mode:
+
+1. Open the **View** tab and click **Macros**.
+2. Insert the `debugger` statement in your script.
+3. Open the developer tools:
+   - **For ONLYOFFICE Docs**: press **F12** to open the browser developer console.
+   - **For Desktop Editors**: follow the [instruction for debugging in ONLYOFFICE Desktop Editors](../../desktop-editors/usage-api/debugging/running-in-debug-mode-on-windows.md).
+4. Click ![Play icon](/assets/images/plugins/play.svg) to run your script.
+
+> The `debugger` statement only works when the developer tools are open. Otherwise, the browser silently ignores it.
+
+![Debugger](/assets/images/plugins/debugger.png#gh-light-mode-only)![Debugger](/assets/images/plugins/debugger.dark.png#gh-dark-mode-only)
+
+### Logging values to the console
+
+If you only need to inspect specific values without pausing execution, use `console.log()`. Pass the value or message you want to inspect as an argument, then press **F12** to view the output in the browser developer console:
+
+<!-- This code is related to macros. -->
+
+<!-- eslint-skip -->
+
+```ts
+console.log(123);
+let doc = Api.GetDocument();
+let paragraph = doc.GetElement(0);
+paragraph.AddText("Hello world!");
+```
 
 ## Error messages explained
 
@@ -118,8 +163,6 @@ When a macro fails, an error message appears in the console or as a notification
   }
 })();
 ```
-
----
 
 ## Common mistakes
 
@@ -227,8 +270,6 @@ Adding or removing elements during a `for` loop changes `GetElementsCount()` mid
 })();
 ```
 
----
-
 ## Testing strategies
 
 **Test with minimal data first:**
@@ -327,8 +368,6 @@ Break your macro into small, testable functions. Test each function independentl
 })();
 ```
 
----
-
 ## Next steps
 
 <table>
@@ -357,7 +396,5 @@ Break your macro into small, testable functions. Test each function independentl
 </td>
 </tr>
 </table>
-
----
 
 For questions or feedback, visit the [developer forum](https://forum.onlyoffice.com/).

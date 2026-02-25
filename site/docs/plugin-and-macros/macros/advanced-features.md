@@ -68,8 +68,6 @@ Once registered, type `=DOUBLE(5)` in any cell. The result `10` appears immediat
 
 > Custom function names are **case-insensitive** in cells but must be **unique** across all registered functions. Avoid names that conflict with built-in Excel/Calc functions.
 
----
-
 ## Event-triggered macros
 
 Instead of running a macro manually, you can attach it to a document event using the [attachEvent](../../office-api/usage-api/text-document-api/Api/Methods/attachEvent.md) method. The macro executes automatically whenever the event fires.
@@ -129,8 +127,6 @@ Api.attachEvent("eventName", callbackFunction);
 
 > Event listeners persist only for the current editor session. They are not saved between document opens unless the macro is set to run on startup.
 
----
-
 ## User input and dialogs
 
 ONLYOFFICE macros run in a sandboxed environment without access to native browser dialog functions (`alert`, `prompt`, `confirm`). Use the API wrappers described below to interact with users.
@@ -182,8 +178,6 @@ ONLYOFFICE macros run in a sandboxed environment without access to native browse
 
 > For richer dialog needs (modal windows, forms, dropdowns), consider building a [plugin](../get-started/get-started.md) instead of a macro.
 
----
-
 ## Sharing macros across documents
 
 Macros are stored inside the document by default. To reuse a macro in other documents, use one of the following approaches.
@@ -231,8 +225,6 @@ Macros saved in a document template (`.dotx`, `.ots`) are available to all docum
 
 For large-scale or server-side distribution, use [ONLYOFFICE DocumentBuilder](https://api.onlyoffice.com/docs/document-builder/get-started/overview/) to inject macros programmatically into documents.
 
----
-
 ## Next steps
 
 <table>
@@ -261,7 +253,5 @@ For large-scale or server-side distribution, use [ONLYOFFICE DocumentBuilder](ht
 </td>
 </tr>
 </table>
-
----
 
 For questions or feedback, visit the [developer forum](https://forum.onlyoffice.com/).
