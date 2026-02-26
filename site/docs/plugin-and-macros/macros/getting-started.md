@@ -8,8 +8,6 @@ ONLYOFFICE macros are JavaScript code snippets that automate document tasks usin
 
 > **Note:** Macro functionality is available in ONLYOFFICE Docs version 7.0+. Starting from version 7.1, macros run in strict mode - variables must be declared before use, and access to `window`, `document` objects and `alert()` function is restricted.
 
----
-
 ## Getting started
 
 ### What are macros?
@@ -29,8 +27,6 @@ ONLYOFFICE macros are JavaScript code snippets that automate document tasks usin
 - Custom calculations in spreadsheets
 - Table creation and formatting
 - Document cleanup and standardization
-
----
 
 ### Your first macro (2-min tutorial)
 
@@ -65,8 +61,6 @@ Click the **Run** button (▶️) - the formatted text appears in your document.
 2. Select **Rename** and enter a descriptive name
 3. Click **OK**
 
----
-
 ### Macro editor walkthrough
 
 ![Macros window](/assets/images/plugins/macro-window.png#gh-light-mode-only)![Macros window](/assets/images/plugins/macro-window.dark.png#gh-dark-mode-only)
@@ -85,8 +79,6 @@ Click the **Run** button (▶️) - the formatted text appears in your document.
 To add: Click ![Plus icon](/assets/images/plugins/plus.svg#gh-light-mode-only)![Plus icon](/assets/images/plugins/plus.dark.svg#gh-dark-mode-only)
 
 To rename/copy/delete: Click ![Dots icon](/assets/images/plugins/dots.svg#gh-light-mode-only)![Dots icon](/assets/images/plugins/dots.dark.svg#gh-dark-mode-only) next to macro name
-
----
 
 ### When to use macros vs plugins
 
@@ -115,9 +107,6 @@ To rename/copy/delete: Click ![Dots icon](/assets/images/plugins/dots.svg#gh-lig
 
 [Learn more about plugins →](../get-started/get-started.md)
 
-
----
-
 ## Additional resources
 
 **Documentation:**
@@ -137,8 +126,6 @@ To rename/copy/delete: Click ![Dots icon](/assets/images/plugins/dots.svg#gh-lig
 - [Developer Forum](https://forum.onlyoffice.com/)
 - [GitHub Repository](https://github.com/ONLYOFFICE/DocumentBuilder)
 - [Stack Overflow](https://stackoverflow.com/questions/tagged/onlyoffice)
-
----
 
 ## Next steps
 
@@ -168,7 +155,5 @@ To rename/copy/delete: Click ![Dots icon](/assets/images/plugins/dots.svg#gh-lig
 </td>
 </tr>
 </table>
-
----
 
 For questions or feedback, visit the [developer forum](https://forum.onlyoffice.com/).

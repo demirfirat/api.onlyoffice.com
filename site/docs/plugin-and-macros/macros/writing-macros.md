@@ -35,8 +35,6 @@ var oTable = Api.CreateTable(3, 4); // 3 columns, 4 rows
 var oRange = oDocument.GetRangeBySelect();
 ```
 
----
-
 ## Common operations
 
 ### Text manipulation
@@ -78,8 +76,6 @@ var oRange = oDocument.GetRangeBySelect();
 })();
 ```
 
----
-
 ### Formatting
 
 **Text formatting:**
@@ -119,8 +115,6 @@ var oRange = oDocument.GetRangeBySelect();
   }
 })();
 ```
-
----
 
 ### Tables and data
 
@@ -182,8 +176,6 @@ var oRange = oDocument.GetRangeBySelect();
 })();
 ```
 
----
-
 ### Document navigation
 
 **Cursor movement:**
@@ -222,8 +214,6 @@ var oRange = oDocument.GetRangeBySelect();
   }
 })();
 ```
-
----
 
 ## Best practices
 
@@ -289,8 +279,6 @@ for (var i = 0; i < 100; i++) {
   }
 })();
 ```
-
----
 
 ## Code snippets library
 
@@ -380,8 +368,6 @@ for (var i = 0; i < 100; i++) {
 })();
 ```
 
----
-
 ## Generating macros using AI plugin
 
 If you want to speed up the process, starting from version 9.0, you can use the AI plugin built into ONLYOFFICE to automatically generate ONLYOFFICE macros from their descriptions:
@@ -402,8 +388,6 @@ If you want to speed up the process, starting from version 9.0, you can use the 
 
 6. Click ![Play icon](/assets/images/plugins/play.svg) to test the script.
 
----
-
 ## Subscribing to events
 
 To subscribe to the specified event and call the callback function when the event fires, use the [attachEvent](../../office-api/usage-api/text-document-api/Api/Methods/attachEvent.md) method.
@@ -419,8 +403,6 @@ Api.attachEvent("asc_onHyperlinkClick", () => {
 When you click any hyperlink in a document, the **asc\_onHyperlinkClick** event will be executed and the *"HYPERLINK!!!"* message will appear in the console.
 
 ![Click hyperlink](/assets/images/plugins/click-hyperlink.png)
-
----
 
 ## Assigning macros
 
