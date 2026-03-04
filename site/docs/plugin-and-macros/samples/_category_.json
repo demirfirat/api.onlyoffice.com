@@ -1,5 +1,8 @@
 {
   "position": 8,
   "collapsed": false,
-  "label": "Samples"
+  "label": "Samples",
+  "link": {
+    "type": "generated-index"
+  }
 }
