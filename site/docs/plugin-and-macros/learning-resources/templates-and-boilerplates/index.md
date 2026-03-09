@@ -6,7 +6,7 @@ sidebar_position: 6
 
 **Goal:** Start faster with ready-made structures you can adapt for your own plugins, macros, and AI functions.
 
-Use these templates together with the [samples](../plugin-samples/index.md) and [tutorials](../tutorials/index.md) to move from prototype to production-ready solution quickly, without breaking existing plugin, macro, or AI function APIs.
+Use these templates together with the [samples](../samples-and-examples/index.md) and [tutorials](../tutorials/index.md) to move from prototype to production-ready solution quickly, without breaking existing plugin, macro, or AI function APIs.
 
 ## Plugin templates
 
@@ -28,7 +28,7 @@ Each template provides:
 2. Copy the template folder that matches your plugin type (panel, window, background).
 3. Update `config.json` with your plugin name, GUID, and description.
 4. Replace the placeholder UI in `index.html` with your own panel.
-5. Implement your logic in `plugin.js` using the [Plugin API](../../interacting-with-editors/).
+5. Implement your logic in `plugin.js` using the [Plugin API](https://onlyoffice.github.io/sdkjs-plugins/v1/plugins.js).
 
 For a detailed walkthrough, see the **Using plugin templates** section in the [Quick Start Guides](../../get-started/).
 

@@ -8,19 +8,12 @@ This guide provides an overview of ONLYOFFICE extension capabilities, including 
 
 ## Getting Started Options
 
-<table>
-<tr>
-<td width="50%">
-
 ### Quick Start
 
 Begin development immediately with step-by-step tutorials:
 
 - [Quick Start Guides](quick-start-guides.md) — Complete walkthroughs
 - [Interactive Playground](playground/) — Test code without installation
-
-</td>
-<td width="50%">
 
 ### Overview and Concepts
 
@@ -30,13 +23,7 @@ Learn about extension capabilities and implementation approaches:
 - [Choosing an Approach](#choosing-an-approach) — Decision framework
 - [Feature Comparison](#feature-comparison) — Detailed comparison table
 
-</td>
-</tr>
-</table>
-
----
-
-## <a name="extension-types"></a>Extension Types
+## Extension Types
 
 ONLYOFFICE supports three extension methods, each designed for specific use cases:
 
@@ -56,8 +43,6 @@ Plugins are HTML/CSS/JavaScript applications embedded in the ONLYOFFICE editor i
 - **Technologies:** HTML, CSS, JavaScript
 - **Distribution:** [ONLYOFFICE Marketplace](https://www.onlyoffice.com/app-directory/en) or private deployment
 
----
-
 ### Macros
 
 Macros are JavaScript code snippets that execute directly within documents. They require no installation and run in the document context.
@@ -73,8 +58,6 @@ Macros are JavaScript code snippets that execute directly within documents. They
 - **Skill level:** Beginner
 - **Technologies:** JavaScript
 - **Distribution:** Copy-paste or embed in document templates
-
----
 
 ### AI Integration
 
@@ -92,13 +75,9 @@ AI-enabled plugins combine standard plugin capabilities with AI service integrat
 - **Technologies:** Plugin API, AI provider integration (OpenAI, Claude, or custom services)
 - **Additional requirements:** API keys for AI services
 
----
-
 [Browse 50+ examples in the App Directory](https://www.onlyoffice.com/app-directory/en)
 
----
-
-## <a name="choosing-an-approach"></a>Choosing an Approach
+## Choosing an Approach
 
 Use the following decision tree to select the appropriate extension method:
 
@@ -131,9 +110,7 @@ START
 
 Refer to the [Feature Comparison](#feature-comparison) table for detailed information.
 
----
-
-## <a name="feature-comparison"></a>Feature Comparison
+## Feature Comparison
 
 The following table compares the capabilities of each extension method:
 
@@ -150,9 +127,7 @@ The following table compares the capabilities of each extension method:
 | **Primary Use Case** | Reusable tools, integrations | Personal automation | AI-powered features |
 | **Framework Support** | React, Vue, Angular supported | Vanilla JavaScript only | Any framework supported |
 
----
-
-## <a name="examples"></a>Examples
+## Examples
 
 The following examples demonstrate real-world implementations:
 
@@ -180,8 +155,6 @@ The following examples demonstrate real-world implementations:
 
 [Browse 50+ plugin examples →](../samples/plugin-samples/plugin-samples.md)
 
----
-
 ### Macro Examples
 
 **Table Formatting**
@@ -197,8 +170,6 @@ The following examples demonstrate real-world implementations:
 - Removes metadata and standardizes formatting
 
 [Browse macro examples →](../samples/macro-samples/macro-samples.md)
-
----
 
 ### AI Integration Examples
 
@@ -219,12 +190,9 @@ The following examples demonstrate real-world implementations:
 
 [Browse AI function examples →](../samples/custom-ai-functions-samples/custom-ai-functions-samples.md)
 
----
+## Frequently Asked Questions
 
-## <a name="faq"></a>Frequently Asked Questions
-
-<details>
-<summary><strong>Can plugins access files outside ONLYOFFICE?</strong></summary>
+### Can plugins access files outside ONLYOFFICE?
 
 No. Plugins run in a sandboxed browser environment with the following capabilities:
 - Access to current document content
@@ -232,31 +200,25 @@ No. Plugins run in a sandboxed browser environment with the following capabiliti
 - Browser localStorage for data storage
 
 Plugins cannot access the local filesystem or other applications.
-</details>
 
-<details>
-<summary><strong>Do plugins require a server?</strong></summary>
+### Do plugins require a server?
 
 **Development:** No server required. Plugins can be developed entirely client-side using local files.
 
 **Production:** Server requirements depend on plugin functionality:
 - **Client-only plugins** (no external APIs): No server required
 - **API integrations**: Backend server or serverless functions required
-- **AI features**: API endpoints required (self-hosted or third-party services)
-</details>
+- **AI features:** API endpoints required (self-hosted or third-party services)
 
-<details>
-<summary><strong>Can plugins be monetized?</strong></summary>
+### Can plugins be monetized?
 
 Yes. Available monetization options:
 - License sales through your own website
 - Freemium models (basic free, premium paid)
 - Paid support and customization services
 - Independent distribution of paid plugins (ONLYOFFICE Marketplace currently hosts free plugins)
-</details>
 
-<details>
-<summary><strong>Are frontend frameworks supported?</strong></summary>
+### Are frontend frameworks supported?
 
 Yes. Any frontend framework can be used for plugin development. Requirements:
 - Final output must be standard HTML/CSS/JS
@@ -264,10 +226,8 @@ Yes. Any frontend framework can be used for plugin development. Requirements:
 - Plugin must load correctly in an iframe environment
 
 Common build tools: Vite, Webpack
-</details>
 
-<details>
-<summary><strong>How are plugins debugged?</strong></summary>
+### How are plugins debugged?
 
 Use browser DevTools for debugging:
 1. Right-click on the plugin UI
@@ -275,10 +235,8 @@ Use browser DevTools for debugging:
 3. Use Console, Network, and Sources tabs
 
 [Detailed debugging guide →](../tutorials/developing/for-web-editors.md)
-</details>
 
-<details>
-<summary><strong>What are the main limitations?</strong></summary>
+### What are the main limitations?
 
 Key constraints:
 - Plugin package size limit: 50MB (use CDN for large libraries)
@@ -287,13 +245,10 @@ Key constraints:
 - CORS restrictions apply for external APIs
 - External APIs require internet connectivity (implement offline fallbacks)
 - Feature availability varies by editor type (check `EditorsSupport` in configuration)
-</details>
 
 [View all FAQs →](../more-information/faq/)
 
----
-
-## <a name="troubleshooting"></a>Troubleshooting
+## Troubleshooting
 
 ### Plugin Issues
 
@@ -315,9 +270,7 @@ Key constraints:
 - [GitHub Issues](https://github.com/ONLYOFFICE/sdkjs-plugins) — Bug reports
 - [Stack Overflow](https://stackoverflow.com/questions/tagged/onlyoffice) — Q&A archive
 
----
-
-## <a name="resources"></a>Resources
+## Resources
 
 ### Development Tools
 
@@ -346,50 +299,25 @@ Key constraints:
 - [Stack Overflow](https://stackoverflow.com/questions/tagged/onlyoffice) — Technical Q&A
 - [Changelog](../more-information/changelog/) — API updates
 
----
-
-## <a name="next-steps"></a>Next Steps
-
-<table>
-<tr>
-<td width="33%" align="center">
+## Next Steps
 
 ### Start Development
 
-[Quick Start Guides →](quick-start-guides.md)
-
-[Plugin Tutorial →](../structure/getting-started.md)
-
-[Macro Tutorial →](../macros/getting-started.md)
-
-[AI Integration →](../ai/ai-plugin.md)
-
-</td>
-<td width="33%" align="center">
+- [Quick Start Guides](quick-start-guides.md)
+- [Plugin Tutorial](../structure/getting-started.md)
+- [Macro Tutorial](../macros/getting-started.md)
+- [AI Integration](../ai/ai-plugin.md)
 
 ### Experiment
 
-[Open Playground →](playground/)
-
-[Browse Examples →](https://github.com/ONLYOFFICE/sdkjs-plugins)
-
-[Watch Tutorials →](https://www.youtube.com/onlyoffice)
-
-</td>
-<td width="33%" align="center">
+- [Open Playground](playground/)
+- [Browse Examples](https://github.com/ONLYOFFICE/sdkjs-plugins)
+- [Watch Tutorials](https://www.youtube.com/onlyoffice)
 
 ### Learn More
 
-[API Reference →](../interacting-with-editors/overview/overview.md)
-
-[Best Practices →](../tutorials/developing/for-web-editors/)
-
-[Publishing Guide →](../tutorials/publishing.md)
-
-</td>
-</tr>
-</table>
-
----
+- [API Reference](../interacting-with-editors/overview/overview.md)
+- [Best Practices](../tutorials/developing/for-web-editors/)
+- [Publishing Guide](../tutorials/publishing.md)
 
 For questions or feedback, visit the [developer forum](https://forum.onlyoffice.com/).

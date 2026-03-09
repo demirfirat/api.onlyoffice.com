@@ -8,14 +8,14 @@ sidebar_position: 3
 
 Start from the full collection or browse by what you want the AI to do.
 
-- **Full collection:** [Browse all custom AI function samples](../../samples/custom-ai-functions-samples/custom-ai-functions-samples.md)
+- **Full collection:** [Browse all custom AI function samples](../../../samples/custom-ai-functions-samples/custom-ai-functions-samples.md)
 
 ## Content generation
 
 Use AI functions to draft, rewrite, and summarize text content inside documents.
 
 Relevant samples:
-→ [Text document editor AI functions](../../samples/custom-ai-functions-samples/custom-ai-functions-samples.md#text-document-editor)
+→ [Text document editor AI functions](../../../samples/custom-ai-functions-samples/custom-ai-functions-samples.md#text-document-editor)
 
 Typical tasks:
 
@@ -29,7 +29,7 @@ Typical tasks:
 Use AI functions to interpret spreadsheet data, explain formulas, and surface insights.
 
 Relevant samples:
-→ [Spreadsheet editor AI functions](../../samples/custom-ai-functions-samples/custom-ai-functions-samples.md#spreadsheet-editor)
+→ [Spreadsheet editor AI functions](../../../samples/custom-ai-functions-samples/custom-ai-functions-samples.md#spreadsheet-editor)
 
 Typical tasks:
 
@@ -43,11 +43,8 @@ Typical tasks:
 Use AI functions to detect structure, extract key points, and enrich content in presentations and documents.
 
 Relevant samples:
-→ [Presentation editor AI functions](../../samples/custom-ai-functions-samples/custom-ai-functions-samples.md#presentation-editor)
+→ [Presentation editor AI functions](../../../samples/custom-ai-functions-samples/custom-ai-functions-samples.md#presentation-editor)
 
 Typical tasks:
 
 - Extract headings, key terms, or action items from a document.
-- Generate speaker notes from slide content.
-- Tag or classify document sections automatically.
-- Build a structured outline from unstructured text.
