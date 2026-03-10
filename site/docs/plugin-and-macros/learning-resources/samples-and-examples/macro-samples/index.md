@@ -2,7 +2,7 @@
 sidebar_position: 2
 ---
 
-# Macro samples
+# Macro Samples
 
 **Goal:** Automate repetitive operations and add document logic without writing a full plugin.
 
@@ -46,4 +46,19 @@ Typical tasks:
 - Run calculations and generate summary rows.
 - Export results to a formatted document or PDF.
 
+## Automation scripts
+
+Macros that orchestrate multi-step operations, react to document state, or glue several editors together.
+
+Typical tasks:
+
+- Run periodic clean-up or formatting passes on large documents.
+- Generate, update, and distribute reports from template files.
+- Chain several macros together into one automated workflow.
+
 Relevant collections:
+
+- [Text document macros](../../../samples/macro-samples/macro-samples.md#text-document-editor)
+- [Spreadsheet macros](../../../samples/macro-samples/macro-samples.md#spreadsheet-editor)
+- [Presentation macros](../../../samples/macro-samples/macro-samples.md#presentation-editor)
+- [PDF macros](../../../samples/macro-samples/macro-samples.md#pdf-editor)

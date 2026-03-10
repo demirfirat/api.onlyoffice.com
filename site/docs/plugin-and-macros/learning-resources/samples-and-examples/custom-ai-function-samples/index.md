@@ -2,7 +2,7 @@
 sidebar_position: 3
 ---
 
-# Custom AI function samples
+# Custom AI Function Samples
 
 **Goal:** Extend the ONLYOFFICE AI agent with domain‑specific logic using custom functions.
 

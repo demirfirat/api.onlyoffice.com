@@ -2,7 +2,7 @@
 sidebar_position: 5
 ---
 
-# Use case gallery
+# Use Case Gallery
 
 **Goal:** See how samples, macros, and AI functions combine into complete solutions for real-world scenarios.
 
@@ -18,7 +18,7 @@ Automate document-heavy workflows to reduce manual effort and errors.
 
 **Solution:**
 
-1. Use the [Invoices plugin](../../plugin-and-macros/samples/plugin-samples/invoices.md) to pull order data and fill a template.
+1. Use the [Invoices plugin](../../../plugin-and-macros/samples/plugin-samples/invoices.md) to pull order data and fill a template.
 2. Apply spreadsheet macros to calculate totals, taxes, and discounts.
 3. Use PDF editor macros to set validation rules before sending.
 

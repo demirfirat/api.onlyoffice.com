@@ -2,7 +2,7 @@
 sidebar_position: 6
 ---
 
-# Templates & boilerplates
+# Templates & Boilerplates
 
 **Goal:** Start faster with ready-made structures you can adapt for your own plugins, macros, and AI functions.
 
