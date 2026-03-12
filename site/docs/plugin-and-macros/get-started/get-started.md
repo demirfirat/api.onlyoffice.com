@@ -1,4 +1,4 @@
-# Getting Started
+# Getting started
 
 This guide provides an overview of ONLYOFFICE extension capabilities, including plugins, macros, and AI integration. Use this guide to understand available options and select the appropriate approach for your requirements.
 
@@ -6,16 +6,16 @@ This guide provides an overview of ONLYOFFICE extension capabilities, including 
 
 ---
 
-## Getting Started Options
+## Getting started options
 
-### Quick Start
+### Quick start
 
 Begin development immediately with step-by-step tutorials:
 
 - [Quick Start Guides](quick-start-guides.md) — Complete walkthroughs
 - [Interactive Playground](playground/) — Test code without installation
 
-### Overview and Concepts
+### Overview and concepts
 
 Learn about extension capabilities and implementation approaches:
 
@@ -23,7 +23,7 @@ Learn about extension capabilities and implementation approaches:
 - [Choosing an Approach](#choosing-an-approach) — Decision framework
 - [Feature Comparison](#feature-comparison) — Detailed comparison table
 
-## Extension Types
+## Extension types
 
 ONLYOFFICE supports three extension methods, each designed for specific use cases:
 
@@ -77,7 +77,7 @@ AI-enabled plugins combine standard plugin capabilities with AI service integrat
 
 [Browse 50+ examples in the App Directory](https://www.onlyoffice.com/app-directory/en)
 
-## Choosing an Approach
+## Choosing an approach
 
 Use the following decision tree to select the appropriate extension method:
 
@@ -110,7 +110,7 @@ START
 
 Refer to the [Feature Comparison](#feature-comparison) table for detailed information.
 
-## Feature Comparison
+## Feature comparison
 
 The following table compares the capabilities of each extension method:
 

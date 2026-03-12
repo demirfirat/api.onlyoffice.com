@@ -2,7 +2,7 @@
 sidebar_position: 4
 ---
 
-# Build an AI Writing Assistant
+# Build an AI writing assistant
 
 Learn how to combine the AI plugin base with custom AI functions to create a domain-specific writing tool.
 

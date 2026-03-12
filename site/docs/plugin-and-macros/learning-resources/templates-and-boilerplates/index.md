@@ -62,7 +62,7 @@ Copy any macro sample into this wrapper and adapt the body.
 
 Take the custom AI function samples as boilerplates for common AI tasks.
 
-### Pattern: Content generation
+### Pattern: content generation
 
 ```js
 // Register a custom AI function that generates text from a prompt
@@ -79,7 +79,7 @@ Api.RegisterAIFunction({
 
 - Full examples: [Text document editor AI functions](../../samples/custom-ai-functions-samples/custom-ai-functions-samples.md#text-document-editor)
 
-### Pattern: Data analysis
+### Pattern: data analysis
 
 ```js
 // Register a custom AI function that explains a spreadsheet formula
@@ -96,7 +96,7 @@ Api.RegisterAIFunction({
 
 - Full examples: [Spreadsheet editor AI functions](../../samples/custom-ai-functions-samples/custom-ai-functions-samples.md#spreadsheet-editor)
 
-### Pattern: Document intelligence
+### Pattern: document intelligence
 
 ```js
 // Register a custom AI function that extracts key points from a document section

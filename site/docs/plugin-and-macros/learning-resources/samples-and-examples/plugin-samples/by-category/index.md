@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# By Category
+# By category
 
 Filter plugin samples by the type of integration or functionality you need.
 

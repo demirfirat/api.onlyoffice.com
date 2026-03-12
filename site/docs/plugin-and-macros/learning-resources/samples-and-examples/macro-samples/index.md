@@ -2,7 +2,7 @@
 sidebar_position: 2
 ---
 
-# Macro Samples
+# Macro samples
 
 **Goal:** Automate repetitive operations and add document logic without writing a full plugin.
 

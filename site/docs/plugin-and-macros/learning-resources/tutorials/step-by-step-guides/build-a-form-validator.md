@@ -2,7 +2,7 @@
 sidebar_position: 2
 ---
 
-# Build a Form Validator
+# Build a form validator
 
 Learn how to validate PDF form fields automatically using macros.
 

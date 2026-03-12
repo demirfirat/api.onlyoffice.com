@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# Plugin Samples
+# Plugin samples
 
 **Goal:** Browse working plugin code you can copy, modify, and publish.
 

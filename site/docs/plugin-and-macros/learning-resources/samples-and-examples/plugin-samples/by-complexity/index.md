@@ -2,7 +2,7 @@
 sidebar_position: 2
 ---
 
-# By Complexity
+# By complexity
 
 Filter plugin samples by how much experience you have or how much complexity you're ready to tackle.
 

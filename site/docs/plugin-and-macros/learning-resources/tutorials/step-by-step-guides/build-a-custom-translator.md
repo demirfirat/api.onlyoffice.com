@@ -2,7 +2,7 @@
 sidebar_position: 3
 ---
 
-# Build a Custom Translator
+# Build a custom translator
 
 Learn how to call an external translation API from a plugin and display results in a custom panel.
 

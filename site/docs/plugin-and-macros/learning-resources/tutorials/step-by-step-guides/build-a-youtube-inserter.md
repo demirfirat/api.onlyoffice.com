@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# Build a YouTube Inserter
+# Build a YouTube inserter
 
 Learn how to embed and control YouTube videos inside ONLYOFFICE editors using OLE objects.
 

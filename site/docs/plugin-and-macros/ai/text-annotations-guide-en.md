@@ -1,3 +1,7 @@
+---
+sidebar_position: 1
+---
+
 # Text annotations API guide
 
 ONLYOFFICE 9.2.0 introduced an API extension for working with text annotations — visual underlines that highlight text sections and allow you to associate metadata with them.

@@ -2,7 +2,7 @@
 sidebar_position: 5
 ---
 
-# Use Case Gallery
+# Use case gallery
 
 **Goal:** See how samples, macros, and AI functions combine into complete solutions for real-world scenarios.
 
