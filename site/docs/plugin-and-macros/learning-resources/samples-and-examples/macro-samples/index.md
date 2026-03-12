@@ -15,7 +15,7 @@ Start from the full collection or filter by the type of task you want to accompl
 Samples that manipulate text appearance, styles, and structure in text documents.
 
 See the **Text document editor** examples in the macro collection:
-→ [Text document macros](../../../samples/macro-samples/macro-samples.md#text-document-editor)
+- [Text document macros](../../../samples/macro-samples/macro-samples.md#text-document-editor)
 
 Typical tasks:
 
@@ -28,7 +28,7 @@ Typical tasks:
 Samples that create, modify, and format tables inside spreadsheets and documents.
 
 See the **Spreadsheet editor** examples for ranges, formulas, and layout:
-→ [Spreadsheet macros](../../../samples/macro-samples/macro-samples.md#spreadsheet-editor)
+- [Spreadsheet macros](../../../samples/macro-samples/macro-samples.md#spreadsheet-editor)
 
 Typical tasks:
 

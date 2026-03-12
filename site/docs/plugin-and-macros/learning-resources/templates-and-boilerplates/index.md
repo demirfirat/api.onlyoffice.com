@@ -2,7 +2,7 @@
 sidebar_position: 6
 ---
 
-# Templates & Boilerplates
+# Templates and boilerplates
 
 **Goal:** Start faster with ready-made structures you can adapt for your own plugins, macros, and AI functions.
 
@@ -14,7 +14,7 @@ Use these templates together with the [samples](../samples-and-examples/index.md
 
 Use the official plugin templates from the ONLYOFFICE repository as your starting point:
 
-→ [ONLYOFFICE sdkjs-plugins repository](https://github.com/ONLYOFFICE/sdkjs-plugins)
+- [ONLYOFFICE sdkjs-plugins repository](https://github.com/ONLYOFFICE/sdkjs-plugins)
 
 Each template provides:
 
@@ -77,7 +77,7 @@ Api.RegisterAIFunction({
 });
 ```
 
-→ Full examples: [Text document editor AI functions](../../samples/custom-ai-functions-samples/custom-ai-functions-samples.md#text-document-editor)
+- Full examples: [Text document editor AI functions](../../samples/custom-ai-functions-samples/custom-ai-functions-samples.md#text-document-editor)
 
 ### Pattern: Data analysis
 
@@ -94,7 +94,7 @@ Api.RegisterAIFunction({
 });
 ```
 
-→ Full examples: [Spreadsheet editor AI functions](../../samples/custom-ai-functions-samples/custom-ai-functions-samples.md#spreadsheet-editor)
+- Full examples: [Spreadsheet editor AI functions](../../samples/custom-ai-functions-samples/custom-ai-functions-samples.md#spreadsheet-editor)
 
 ### Pattern: Document intelligence
 
@@ -111,4 +111,4 @@ Api.RegisterAIFunction({
 });
 ```
 
-→ Full examples: [Presentation editor AI functions](../../samples/custom-ai-functions-samples/custom-ai-functions-samples.md#presentation-editor)
+- Full examples: [Presentation editor AI functions](../../samples/custom-ai-functions-samples/custom-ai-functions-samples.md#presentation-editor)

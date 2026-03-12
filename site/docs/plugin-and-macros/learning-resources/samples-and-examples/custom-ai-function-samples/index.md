@@ -4,7 +4,7 @@ sidebar_position: 3
 
 # Custom AI Function Samples
 
-**Goal:** Extend the ONLYOFFICE AI agent with domain‑specific logic using custom functions.
+**Goal:** Extend the ONLYOFFICE AI agent with domain-specific logic using custom functions.
 
 Start from the full collection or browse by what you want the AI to do.
 
@@ -15,7 +15,7 @@ Start from the full collection or browse by what you want the AI to do.
 Use AI functions to draft, rewrite, and summarize text content inside documents.
 
 Relevant samples:
-→ [Text document editor AI functions](../../../samples/custom-ai-functions-samples/custom-ai-functions-samples.md#text-document-editor)
+- [Text document editor AI functions](../../../samples/custom-ai-functions-samples/custom-ai-functions-samples.md#text-document-editor)
 
 Typical tasks:
 
@@ -29,7 +29,7 @@ Typical tasks:
 Use AI functions to interpret spreadsheet data, explain formulas, and surface insights.
 
 Relevant samples:
-→ [Spreadsheet editor AI functions](../../../samples/custom-ai-functions-samples/custom-ai-functions-samples.md#spreadsheet-editor)
+- [Spreadsheet editor AI functions](../../../samples/custom-ai-functions-samples/custom-ai-functions-samples.md#spreadsheet-editor)
 
 Typical tasks:
 
@@ -43,7 +43,7 @@ Typical tasks:
 Use AI functions to detect structure, extract key points, and enrich content in presentations and documents.
 
 Relevant samples:
-→ [Presentation editor AI functions](../../../samples/custom-ai-functions-samples/custom-ai-functions-samples.md#presentation-editor)
+- [Presentation editor AI functions](../../../samples/custom-ai-functions-samples/custom-ai-functions-samples.md#presentation-editor)
 
 Typical tasks:
 
