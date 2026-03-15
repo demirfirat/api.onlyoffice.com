@@ -1,4 +1,4 @@
-# Quick Start Guides
+# Quick start guides
 
 This guide provides step-by-step instructions for creating ONLYOFFICE plugins and macros. It includes three tutorials: a basic plugin implementation, a macro example, and instructions for using existing plugin templates.
 
@@ -6,18 +6,18 @@ This guide provides step-by-step instructions for creating ONLYOFFICE plugins an
 
 ---
 
-## Plugin Development Tutorial
+## Plugin development tutorial
 
 This tutorial demonstrates how to create a basic plugin that inserts text into a document.
 
 **Estimated time:** 5-10 minutes  
 **Prerequisites:** Basic knowledge of HTML, CSS, and JavaScript
 
-### Step 1: Create the Plugin Structure
+### Step 1: Create the plugin structure
 
 Create a folder named `hello-world-plugin` with the following files:
 
-#### Plugin Configuration File
+#### Plugin configuration file
 
 Create a file named `config.json` with the following content:
 
@@ -45,7 +45,7 @@ Create a file named `config.json` with the following content:
 
 ---
 
-#### Plugin Interface File
+#### Plugin interface file
 
 Create a file named `index.html` with the following content:
 
@@ -91,13 +91,13 @@ Create a file named `index.html` with the following content:
 
 ---
 
-### Step 2: Add an Icon (Optional)
+### Step 2: Add an icon (optional)
 
 Create or download a 48x48 pixel PNG icon named `icon.png` and place it in the plugin folder. This icon will appear in the plugin menu.
 
 ---
 
-### Step 3: Install the Plugin
+### Step 3: Install the plugin
 
 Installation procedures vary depending on your ONLYOFFICE deployment:
 
@@ -122,7 +122,7 @@ Installation procedures vary depending on your ONLYOFFICE deployment:
 
 ---
 
-### Step 4: Test the Plugin
+### Step 4: Test the plugin
 
 1. Open a document in ONLYOFFICE
 2. Click **Plugins** in the toolbar
@@ -132,11 +132,11 @@ Installation procedures vary depending on your ONLYOFFICE deployment:
 
 ---
 
-### Step 5: Extend the Plugin
+### Step 5: Extend the plugin
 
 The following examples demonstrate common plugin enhancements:
 
-#### Adding User Input
+#### Adding user input
 
 ```html
 <input type="text" id="customText" placeholder="Enter your text">
@@ -150,7 +150,7 @@ The following examples demonstrate common plugin enhancements:
 </script>
 ```
 
-#### Inserting Formatted Content
+#### Inserting formatted content
 
 ```javascript
 function insertFormattedText() {
@@ -160,7 +160,7 @@ function insertFormattedText() {
 }
 ```
 
-#### Adding Multiple Actions
+#### Adding multiple actions
 
 ```html
 <button onclick="insertHeading()">Insert Heading</button>
@@ -181,7 +181,7 @@ function insertFormattedText() {
 
 ---
 
-### Additional Resources
+### Additional resources
 
 **Documentation:**
 - [Plugin structure and configuration](../structure/configuration/configuration.md)
@@ -195,14 +195,14 @@ function insertFormattedText() {
 
 ---
 
-## Macro Development Tutorial
+## Macro development tutorial
 
 This tutorial demonstrates how to create and execute macros for document automation.
 
 **Estimated time:** 2-5 minutes  
 **Prerequisites:** Basic JavaScript knowledge
 
-### Step 1: Access the Macro Editor
+### Step 1: Access the macro editor
 
 1. Open a document in ONLYOFFICE
 2. Navigate to **Tools → Macros**
@@ -210,7 +210,7 @@ This tutorial demonstrates how to create and execute macros for document automat
 
 ---
 
-### Step 2: Create a Basic Macro
+### Step 2: Create a basic macro
 
 Enter the following code in the macro editor:
 
@@ -241,14 +241,14 @@ Enter the following code in the macro editor:
 
 ---
 
-### Step 3: Execute the Macro
+### Step 3: Execute the macro
 
 1. Click the **Run** button (▶️) in the macro editor
 2. The formatted text will appear in your document
 
 ---
 
-### Step 4: Save the Macro
+### Step 4: Save the macro
 
 1. Click **Save** in the macro editor
 2. Enter a descriptive name (e.g., "Insert Blue Text")
@@ -256,11 +256,11 @@ Enter the following code in the macro editor:
 
 ---
 
-### Example Macros
+### Example macros
 
 The following examples demonstrate common macro use cases:
 
-#### Formatting Headings
+#### Formatting headings
 
 ```javascript
 (function() {
@@ -277,7 +277,7 @@ The following examples demonstrate common macro use cases:
 })();
 ```
 
-#### Finding and Highlighting Text
+#### Finding and highlighting text
 
 ```javascript
 (function() {
@@ -295,7 +295,7 @@ The following examples demonstrate common macro use cases:
 })();
 ```
 
-#### Creating Tables
+#### Creating tables
 
 ```javascript
 (function() {
@@ -314,7 +314,7 @@ The following examples demonstrate common macro use cases:
 })();
 ```
 
-#### Calculating Text Statistics
+#### Calculating text statistics
 
 ```javascript
 (function() {
@@ -339,7 +339,7 @@ The following examples demonstrate common macro use cases:
 
 ---
 
-### Additional Resources
+### Additional resources
 
 **Documentation:**
 - [Complete macro guide](../macros/writing-macros.md)
@@ -352,14 +352,14 @@ The following examples demonstrate common macro use cases:
 
 ---
 
-## Using Plugin Templates
+## Using plugin templates
 
 This section explains how to use existing plugin templates as a starting point for development.
 
 **Estimated time:** 10-15 minutes  
 **Prerequisites:** Git (optional), basic web development knowledge
 
-### Step 1: Select a Template
+### Step 1: Select a template
 
 Browse the official ONLYOFFICE plugin repository:
 
@@ -373,7 +373,7 @@ Browse the official ONLYOFFICE plugin repository:
 
 ---
 
-### Step 2: Clone the Repository
+### Step 2: Clone the repository
 
 Using Git:
 
@@ -389,7 +389,7 @@ Alternatively, download a specific plugin as a ZIP file from GitHub.
 
 ---
 
-### Step 3: Customize the Configuration
+### Step 3: Customize the configuration
 
 #### Modify `config.json`
 
@@ -418,7 +418,7 @@ Update the following required fields:
 
 ---
 
-#### Modify the Interface
+#### Modify the interface
 
 Update `index.html` to match your requirements:
 
@@ -441,7 +441,7 @@ Update `index.html` to match your requirements:
 
 ---
 
-#### Update Styles
+#### Update styles
 
 Customize the appearance in `styles.css` or inline styles:
 
@@ -468,7 +468,7 @@ button:hover {
 
 ---
 
-### Step 4: Test the Customized Plugin
+### Step 4: Test the customized plugin
 
 1. Install the plugin following the [installation instructions](#step-3-install-the-plugin)
 2. Open ONLYOFFICE and test your modifications
@@ -476,9 +476,9 @@ button:hover {
 
 ---
 
-### Step 5: Add Custom Functionality
+### Step 5: Add custom functionality
 
-#### External API Integration Example
+#### External API integration example
 
 ```javascript
 async function fetchDataFromAPI() {
@@ -494,7 +494,7 @@ async function fetchDataFromAPI() {
 }
 ```
 
-#### User Preferences Example
+#### User preferences example
 
 ```javascript
 // Save user preferences
@@ -510,7 +510,7 @@ function loadPreference(key) {
 
 ---
 
-### Step 6: Package and Distribution
+### Step 6: Package and distribution
 
 Preparation steps for plugin distribution:
 
@@ -526,7 +526,7 @@ Preparation steps for plugin distribution:
 
 ---
 
-### Best Practices
+### Best practices
 
 **Required steps:**
 - Change the GUID to avoid conflicts with existing plugins
@@ -543,7 +543,7 @@ Preparation steps for plugin distribution:
 
 ---
 
-## Next Steps
+## Next steps
 
 After completing these tutorials, refer to the following resources:
 
@@ -562,7 +562,7 @@ After completing these tutorials, refer to the following resources:
 </td>
 <td width="33%" align="center">
 
-### Interactive Tools
+### Interactive tools
 
 [Playground →](playground/)
 
