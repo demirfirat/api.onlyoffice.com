@@ -12,11 +12,8 @@ Choose the type of code you want to learn:
 
 Build rich extensions that integrate with ONLYOFFICE editors.
 
-- [Browse plugin samples](./plugin-samples/index.md)
-
-- **By category:** Find samples by what they solve (integration, productivity, UI enhancement, advanced)
-- **By complexity:** Find samples by difficulty (beginner, intermediate, advanced)
-- **Full collection:** Browse all plugin samples in one place
+- **[By category](./plugin-samples/by-category/index.md):** Find samples by what they solve (integration, productivity, UI enhancement, advanced)
+- **[By complexity](./plugin-samples/by-complexity/index.md):** Find samples by difficulty (beginner, intermediate, advanced)
 
 ## Macro samples
 

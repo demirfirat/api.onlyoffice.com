@@ -1,3 +1,7 @@
+---
+sidebar_position: 1
+---
+
 # Getting started
 
 This guide provides an overview of ONLYOFFICE extension capabilities, including plugins, macros, and AI integration. Use this guide to understand available options and select the appropriate approach for your requirements.

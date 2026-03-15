@@ -1,3 +1,7 @@
+---
+sidebar_position: 2
+---
+
 # Quick start guides
 
 This guide provides step-by-step instructions for creating ONLYOFFICE plugins and macros. It includes three tutorials: a basic plugin implementation, a macro example, and instructions for using existing plugin templates.

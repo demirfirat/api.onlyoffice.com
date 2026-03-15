@@ -4,111 +4,403 @@ sidebar_position: -5
 
 # 编写宏
 
-现在您已经了解了宏的工作原理，可以试着编写您自己的宏。假如有一个表格，需要对表格的奇数行和偶数行进行着色（将奇数行设为绿色，偶数行设为红色），且该表格包含 200 行，列的范围为 **A** 到 **S**，如果手动完成这一任务将非常耗时。因此，使用宏将是很好的解决方案。
+本指南介绍使用 Office JavaScript API 编写 ONLYOFFICE 宏的语法、常见操作和最佳实践。
 
-1. 打开 ONLYOFFICE 编辑器并创建一个新的电子表格。
-2. 打开**视图**选项卡并选择**宏**。宏窗口将弹出，并出现一个基础的函数包装器，可以在其中编写所需代码：
+## 基本语法和结构
 
-<!-- 此代码与宏相关。 -->
+所有宏使用此模板：
 
-<!-- eslint-skip -->
+```javascript
+(function () {
+  "use strict";
 
-   ``` ts
-   (function () {
-     // ... your code goes here ...
-   })()
-   ```
-
-3. 让我们参考 [Office API 文档](../../office-api/usage-api/spreadsheet-api/spreadsheet-api.md)完成这一任务：
-
-   - 首先，使用 [GetActiveSheet](../../office-api/usage-api/spreadsheet-api/Api/Methods/GetActiveSheet.md) 方法获取当前工作表:
-
-     ``` ts
-     let worksheet = Api.GetActiveSheet();
-     ```
-
-   - 然后创建一个从第一行遍历到最后一行的循环：
-
-     ``` ts
-     for (let i = 1; i < 200; i += 2) {
-       // TODO: Implement functionality here
-     }
-     ```
-
-   - 定义两个变量：一个用于奇数行，另一个用于偶数行：
-
-     ``` ts
-     let rowOdd = i;
-     let rowEven = i + 1;
-     ```
-
-   - 现在可以访问奇数行和偶数行了，接下来就让我们为每行设置颜色。可以使用 [CreateColorFromRGB](../../office-api/usage-api/spreadsheet-api/Api/Methods/CreateColorFromRGB.md) 方法设置所需颜色。使用 [GetRange](../../office-api/usage-api/spreadsheet-api/ApiWorksheet/Methods/GetRange.md) 方法获取对应行的单元格区域，为奇数行设置颜色：
-
-     ``` ts
-     worksheet.GetRange(`A${rowOdd}:S${rowOdd}`).SetFillColor(Api.CreateColorFromRGB(138, 181, 155));
-     ```
-
-     偶数行除了设置的颜色不同之外操作完全相同：
-
-     ``` ts
-     worksheet.GetRange(`A${rowEven}:S${rowEven}`).SetFillColor(Api.CreateColorFromRGB(216, 227, 220));
-     ```
-
-现在我们将其整合成完整的脚本代码：
-
-<!-- This code is related to macros. -->
-
-<!-- eslint-skip -->
-
-``` ts
-(function()
-{
-    let worksheet = Api.GetActiveSheet();
-    for (let i = 1; i < 200; i += 2) {
-        let rowOdd = i, rowEven = i + 1;
-        worksheet.GetRange("A" + rowOdd + ":S" + rowOdd).SetFillColor(Api.CreateColorFromRGB(138, 181, 155));
-        worksheet.GetRange("A" + rowEven + ":S" + rowEven).SetFillColor(Api.CreateColorFromRGB(216, 227, 220));
-    }
+  // 您的代码在此处
 })();
 ```
 
-将上述代码粘贴到宏窗口中并点击![Play icon](/assets/images/plugins/play.svg)图标。 第 1 到第 200 行将会在不到一秒的时间内被交替着色。
+**基本 API 对象：**
 
-![Alternate raws](/assets/images/plugins/alternate-raws.png)
+```javascript
+// 文档
+var oDocument = Api.GetDocument();
+
+// 段落
+var oParagraph = Api.CreateParagraph();
+oParagraph.AddText("Sample text");
+
+// 表格
+var oTable = Api.CreateTable(3, 4); // 3 列，4 行
+
+// 选择
+var oRange = oDocument.GetRangeBySelect();
+```
+
+## 常见操作
+
+### 文本处理
+
+**插入文本：**
+
+```javascript
+(function () {
+  var oDocument = Api.GetDocument();
+  var oParagraph = Api.CreateParagraph();
+  oParagraph.AddText("New text");
+  oDocument.Push(oParagraph);
+})();
+```
+
+**查找和替换：**
+
+```javascript
+(function () {
+  var oDocument = Api.GetDocument();
+  oDocument.Search("old text", true, false, false);
+  var oRange = oDocument.GetRangeBySelect();
+  if (oRange) {
+    oRange.SetText("new text");
+  }
+})();
+```
+
+**转换选定文本：**
+
+```javascript
+(function () {
+  var oDocument = Api.GetDocument();
+  var oRange = oDocument.GetRangeBySelect();
+  if (oRange) {
+    var text = oRange.GetText();
+    oRange.SetText(text.toUpperCase());
+  }
+})();
+```
+
+### 格式化
+
+**文本格式化：**
+
+```javascript
+(function () {
+  var oParagraph = Api.CreateParagraph();
+  oParagraph.AddText("Formatted text");
+  oParagraph.SetBold(true);
+  oParagraph.SetItalic(true);
+  oParagraph.SetFontSize(24); // 半点（24 = 12pt）
+  oParagraph.SetFontFamily("Arial");
+  oParagraph.SetColor(255, 0, 0); // RGB
+  Api.GetDocument().Push(oParagraph);
+})();
+```
+
+**段落对齐：**
+
+```javascript
+(function () {
+  var oParagraph = Api.CreateParagraph();
+  oParagraph.AddText("Centered text");
+  oParagraph.SetJc("center"); // "left", "center", "right", "justify"
+  Api.GetDocument().Push(oParagraph);
+})();
+```
+
+**高亮显示：**
+
+```javascript
+(function () {
+  var oDocument = Api.GetDocument();
+  var oRange = oDocument.GetRangeBySelect();
+  if (oRange) {
+    oRange.SetHighlight("yellow");
+  }
+})();
+```
+
+### 表格与数据
+
+**创建并填充表格：**
+
+```javascript
+(function () {
+  var oDocument = Api.GetDocument();
+  var oTable = Api.CreateTable(3, 3);
+
+  // 表头行
+  oTable.GetCell(0, 0).GetContent().GetElement(0).AddText("Name");
+  oTable.GetCell(0, 1).GetContent().GetElement(0).AddText("Age");
+  oTable.GetCell(0, 2).GetContent().GetElement(0).AddText("City");
+
+  // 数据行
+  oTable.GetCell(1, 0).GetContent().GetElement(0).AddText("John");
+  oTable.GetCell(1, 1).GetContent().GetElement(0).AddText("30");
+  oTable.GetCell(1, 2).GetContent().GetElement(0).AddText("NYC");
+
+  oDocument.Push(oTable);
+})();
+```
+
+**格式化表格单元格：**
+
+```javascript
+(function () {
+  var oTable = Api.CreateTable(2, 2);
+  var oCell = oTable.GetCell(0, 0);
+
+  // 背景色
+  oCell.SetShd("clear", 200, 200, 200);
+
+  // 单元格内容
+  var oCellContent = oCell.GetContent().GetElement(0);
+  oCellContent.AddText("Header");
+  oCellContent.SetBold(true);
+
+  Api.GetDocument().Push(oTable);
+})();
+```
+
+**表格边框：**
+
+```javascript
+(function () {
+  var oTable = Api.CreateTable(3, 3);
+
+  // 参数：类型、大小、间距、R、G、B
+  oTable.SetTableBorderTop("single", 8, 0, 0, 0, 0);
+  oTable.SetTableBorderBottom("single", 8, 0, 0, 0, 0);
+  oTable.SetTableBorderLeft("single", 8, 0, 0, 0, 0);
+  oTable.SetTableBorderRight("single", 8, 0, 0, 0, 0);
+  oTable.SetTableBorderInsideH("single", 8, 0, 0, 0, 0);
+  oTable.SetTableBorderInsideV("single", 8, 0, 0, 0, 0);
+
+  Api.GetDocument().Push(oTable);
+})();
+```
+
+### 文档导航
+
+**光标移动：**
+
+```javascript
+(function () {
+  var oDocument = Api.GetDocument();
+  oDocument.MoveCursorToStart();
+  // 或者
+  oDocument.MoveCursorToEnd();
+})();
+```
+
+**选择所有内容：**
+
+```javascript
+(function () {
+  var oDocument = Api.GetDocument();
+  oDocument.SelectAllContent();
+  var oRange = oDocument.GetRangeBySelect();
+})();
+```
+
+**迭代段落：**
+
+```javascript
+(function () {
+  var oDocument = Api.GetDocument();
+  var nCount = oDocument.GetElementsCount();
+
+  for (var i = 0; i < nCount; i++) {
+    var oElement = oDocument.GetElement(i);
+    if (oElement.GetClassType() === "paragraph") {
+      console.log("Paragraph " + i + ": " + oElement.GetText());
+    }
+  }
+})();
+```
+
+## 最佳实践
+
+### 代码组织
+
+**使用描述性名称：**
+
+```javascript
+// 好
+var headerParagraph = Api.CreateParagraph();
+var customerTable = Api.CreateTable(3, 5);
+
+// 避免
+var p = Api.CreateParagraph();
+var t = Api.CreateTable(3, 5);
+```
+
+**分解为函数：**
+
+```javascript
+(function () {
+  function createHeader(text) {
+    var oParagraph = Api.CreateParagraph();
+    oParagraph.AddText(text);
+    oParagraph.SetBold(true);
+    oParagraph.SetFontSize(28);
+    return oParagraph;
+  }
+
+  var oDocument = Api.GetDocument();
+  oDocument.Push(createHeader("Document Title"));
+})();
+```
+
+### 性能
+
+**最小化循环中的 API 调用：**
+
+```javascript
+// 高效
+var oDocument = Api.GetDocument(); // 只调用一次
+for (var i = 0; i < 100; i++) {
+  var oParagraph = Api.CreateParagraph();
+  oParagraph.AddText("Line " + i);
+  oDocument.Push(oParagraph);
+}
+```
+
+### 错误处理
+
+**检查空值：**
+
+```javascript
+(function () {
+  var oDocument = Api.GetDocument();
+  var oRange = oDocument.GetRangeBySelect();
+
+  if (oRange) {
+    var text = oRange.GetText();
+    oRange.SetText(text.toUpperCase());
+  } else {
+    console.log("No text selected");
+  }
+})();
+```
+
+## 代码片段库
+
+**全部查找并替换：**
+
+```javascript
+(function () {
+  var oDocument = Api.GetDocument();
+  var searchText = "old";
+  var replaceText = "new";
+  var count = 0;
+
+  oDocument.MoveCursorToStart();
+
+  while (oDocument.Search(searchText, true, false, false)) {
+    var oRange = oDocument.GetRangeBySelect();
+    if (oRange) {
+      oRange.SetText(replaceText);
+      count++;
+    }
+  }
+
+  console.log("Replaced " + count + " instances");
+})();
+```
+
+**字数统计：**
+
+```javascript
+(function () {
+  var oDocument = Api.GetDocument();
+  var oRange = oDocument.GetRangeBySelect();
+
+  if (oRange) {
+    var text = oRange.GetText();
+    var words = text.split(/\s+/).filter(Boolean);
+
+    var oParagraph = Api.CreateParagraph();
+    oParagraph.AddText("\nWord count: " + words.length);
+    oDocument.Push(oParagraph);
+  }
+})();
+```
+
+**带交替行的格式化表格：**
+
+```javascript
+(function () {
+  var oDocument = Api.GetDocument();
+  var oTable = Api.CreateTable(3, 5);
+
+  // 交替行颜色
+  for (var row = 0; row < 5; row++) {
+    for (var col = 0; col < 3; col++) {
+      var oCell = oTable.GetCell(row, col);
+      if (row % 2 === 0) {
+        oCell.SetShd("clear", 240, 240, 240);
+      }
+    }
+  }
+
+  // 边框
+  oTable.SetTableBorderTop("single", 8, 0, 0, 0, 0);
+  oTable.SetTableBorderBottom("single", 8, 0, 0, 0, 0);
+  oTable.SetTableBorderInsideH("single", 8, 0, 0, 0, 0);
+  oTable.SetTableBorderInsideV("single", 8, 0, 0, 0, 0);
+
+  oDocument.Push(oTable);
+})();
+```
+
+**对所有段落应用格式：**
+
+```javascript
+(function () {
+  var oDocument = Api.GetDocument();
+  var nCount = oDocument.GetElementsCount();
+
+  for (var i = 0; i < nCount; i++) {
+    var oElement = oDocument.GetElement(i);
+    if (oElement.GetClassType() === "paragraph") {
+      oElement.SetFontFamily("Arial");
+      oElement.SetFontSize(22);
+      oElement.SetJc("justify");
+    }
+  }
+})();
+```
 
 ## 使用 AI 插件生成宏 {#generating-macros-using-ai-plugin}
 
 如果您希望加快生成宏的过程，从 9.0 版本开始，可以使用 ONLYOFFICE 内置的 AI 插件，通过描述自动生成 ONLYOFFICE 宏：
 
-1. 配置 AI 插件。详细的配置步骤可见于[此处]：(https://helpcenter.onlyoffice.com/docs/userguides/ai/configuration.aspx)。
+1. 配置 AI 插件。详细说明可见于[此处](/docs/plugin-and-macros/ai/ai-plugin.md#configuring)。
 2. 打开**视图**选项卡，点击**宏**。
 3. 在**宏**窗口中点击 **AI** 图标，选择**根据描述创建**。
 
-    ![AI 插件](/assets/images/plugins/ai-plugin.png#gh-light-mode-only)![AI 插件](/assets/images/plugins/ai-plugin.dark.png#gh-dark-mode-only)
+    ![AI plugin](/assets/images/plugins/ai-plugin.png#gh-light-mode-only)![AI plugin](/assets/images/plugins/ai-plugin.dark.png#gh-dark-mode-only)
 
-4. 在**根据描述创建宏**窗口中输入描述，并点击**创建**。生成的宏示例将被插入到**宏**窗口中。
+4. 在**根据描述创建宏**窗口中输入提示词，点击**创建**。生成的宏示例将被插入到**宏**窗口中。
 
-    ![根据描述创建宏](/assets/images/plugins/create-from-description.png#gh-light-mode-only)![根据描述创建宏](/assets/images/plugins/create-from-description.dark.png#gh-dark-mode-only)
+    ![Create from description](/assets/images/plugins/create-from-description.png#gh-light-mode-only)![Create from description](/assets/images/plugins/create-from-description.dark.png#gh-dark-mode-only)
 
-5. 检查代码，如有必要可进行调整。
+5. 检查代码，如有必要进行调整。
 
-    > 尽管 AI 插件可以生成完整且可运行的宏，但生成的宏并不总是完美的。请务必仔细检查输出内容，并进行测试，尤其是复杂的宏。
+    > 尽管 AI 插件可以生成完整且可运行的宏，但并不总是完美的。请务必仔细检查输出内容并进行测试，尤其是对于复杂的宏。
 
-6. 点击![播放图标](/assets/images/plugins/play.svg)测试脚本。
+6. 点击 ![Play icon](/assets/images/plugins/play.svg) 测试脚本。
 
 ## 订阅事件
 
 要订阅指定事件并在事件触发时调用回调函数，请使用 [attachEvent](../../office-api/usage-api/text-document-api/Api/Methods/attachEvent.md) 方法。
 
-例如，要在文档中点击超链接时订阅事件，可以使用以下代码：
+例如，要订阅文档中超链接点击事件，请使用以下代码：
 
-``` ts
+```javascript
 Api.attachEvent("asc_onHyperlinkClick", () => {
   console.log("HYPERLINK!!!");
 })
 ```
 
-当你点击文档中任意超链接时，**asc_onHyperlinkClick** 事件将被触发，并在控制台中显示 "HYPERLINK!!!" 消息。
+当您点击文档中任意超链接时，**asc_onHyperlinkClick** 事件将被触发，控制台中将显示 *"HYPERLINK!!!"* 消息。
 
 ![Click hyperlink](/assets/images/plugins/click-hyperlink.png)
 
@@ -118,7 +410,7 @@ Api.attachEvent("asc_onHyperlinkClick", () => {
 
 1. 右键点击图形对象。
 2. 点击**分配宏**。
-3. 在弹出的窗口中选择一个宏，或者在相应区域输入宏名称。
+3. 在弹出的窗口中选择宏，或在相应字段中输入宏名称。
 4. 点击**确定**按钮。
 
 ![Assign macro](/assets/images/plugins/assign-macro.png)
