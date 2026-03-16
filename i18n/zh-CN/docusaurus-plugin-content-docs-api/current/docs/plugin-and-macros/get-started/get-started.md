@@ -188,7 +188,7 @@ AI 启用的插件将标准插件功能与 AI 服务集成相结合，用于高�
 - 生成洞察和可视化
 - 创建自动化报告
 
-[浏览 AI 函数示例 →](../samples/custom-ai-functions-samples/custom-ai-functions-samples.md)
+[浏览 AI 函数示例 →](../samples/custom-ai-tools-samples/custom-ai-tools-samples.md)
 
 ## 常见问题
 
@@ -283,7 +283,7 @@ AI 启用的插件将标准插件功能与 AI 服务集成相结合，用于高�
 
 - [插件示例](../samples/plugin-samples/plugin-samples.md) — 50+ 可用示例
 - [宏示例](../samples/macro-samples/macro-samples.md) — 常见自动化脚本
-- [AI 函数示例](../samples/custom-ai-functions-samples/custom-ai-functions-samples.md) — AI 集成模式
+- [AI 函数示例](../samples/custom-ai-tools-samples/custom-ai-tools-samples.md) — AI 集成模式
 
 ### 文档
 

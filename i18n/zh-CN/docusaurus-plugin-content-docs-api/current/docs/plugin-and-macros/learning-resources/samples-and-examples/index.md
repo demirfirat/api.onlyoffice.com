@@ -32,7 +32,7 @@ sidebar_position: 1
 
 使用您自己的特定领域逻辑扩展 ONLYOFFICE AI 助手。
 
-- [浏览自定义 AI 函数示例](./custom-ai-function-samples/index.md)
+- [浏览自定义 AI 函数示例](./custom-ai-tool-samples/index.md)
 
 - **内容生成：** 使用 AI 起草、改写和摘要
 - **数据分析：** 解析电子表格数据并解释公式

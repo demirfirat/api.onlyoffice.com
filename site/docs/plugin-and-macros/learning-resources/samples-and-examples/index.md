@@ -25,11 +25,11 @@ Automate document operations and add custom logic without a full plugin.
 - **Table operations:** Create, modify, and format spreadsheet and document tables  
 - **Data processing:** Import, calculate, and export document data
 
-## Custom AI function samples
+## Custom AI tool samples
 
 Extend the ONLYOFFICE AI agent with your own domain-specific logic.
 
-- [Browse custom AI function samples](./custom-ai-function-samples/index.md)
+- [Browse custom AI tool samples](./custom-ai-tool-samples/index.md)
 
 - **Content generation:** Draft, rewrite, and summarize with AI
 - **Data analysis:** Interpret spreadsheet data and explain formulas  

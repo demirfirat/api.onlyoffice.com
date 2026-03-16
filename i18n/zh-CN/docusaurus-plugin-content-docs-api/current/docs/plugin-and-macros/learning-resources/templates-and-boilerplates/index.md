@@ -77,7 +77,7 @@ Api.RegisterAIFunction({
 });
 ```
 
-- 完整示例：[文档编辑器 AI 函数](../../samples/custom-ai-functions-samples/custom-ai-functions-samples.md#text-document-editor)
+- 完整示例：[文档编辑器 AI 函数](../../samples/custom-ai-tools-samples/custom-ai-tools-samples.md#text-document-editor)
 
 ### 模式：数据分析
 
@@ -94,7 +94,7 @@ Api.RegisterAIFunction({
 });
 ```
 
-- 完整示例：[电子表格编辑器 AI 函数](../../samples/custom-ai-functions-samples/custom-ai-functions-samples.md#spreadsheet-editor)
+- 完整示例：[电子表格编辑器 AI 函数](../../samples/custom-ai-tools-samples/custom-ai-tools-samples.md#spreadsheet-editor)
 
 ### 模式：文档智能
 
@@ -111,4 +111,4 @@ Api.RegisterAIFunction({
 });
 ```
 
-- 完整示例：[演示文稿编辑器 AI 函数](../../samples/custom-ai-functions-samples/custom-ai-functions-samples.md#presentation-editor)
+- 完整示例：[演示文稿编辑器 AI 函数](../../samples/custom-ai-tools-samples/custom-ai-tools-samples.md#presentation-editor)

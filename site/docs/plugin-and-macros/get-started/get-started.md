@@ -192,7 +192,7 @@ The following examples demonstrate real-world implementations:
 - Generates insights and visualizations
 - Creates automated reports
 
-[Browse AI function examples →](../samples/custom-ai-functions-samples/custom-ai-functions-samples.md)
+[Browse AI function examples →](../samples/custom-ai-tools-samples/custom-ai-tools-samples.md)
 
 ## Frequently Asked Questions
 
@@ -287,7 +287,7 @@ Key constraints:
 
 - [Plugin Examples](../samples/plugin-samples/plugin-samples.md) — 50+ working examples
 - [Macro Examples](../samples/macro-samples/macro-samples.md) — Common automation scripts
-- [AI Function Examples](../samples/custom-ai-functions-samples/custom-ai-functions-samples.md) — AI integration patterns
+- [AI Function Examples](../samples/custom-ai-tools-samples/custom-ai-tools-samples.md) — AI integration patterns
 
 ### Documentation
 

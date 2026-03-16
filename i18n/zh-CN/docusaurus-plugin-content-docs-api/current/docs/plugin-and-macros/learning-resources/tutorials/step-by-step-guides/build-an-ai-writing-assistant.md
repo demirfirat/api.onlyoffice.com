@@ -11,7 +11,7 @@ sidebar_position: 4
 **资源：**
 
 1. [AI 插件指南](../../../ai/ai-plugin.md) — 了解基础集成。
-2. [自定义 AI 函数示例](../../../samples/custom-ai-functions-samples/custom-ai-functions-samples.md) — 添加特定领域的提示词和工具。
+2. [自定义 AI 函数示例](../../../samples/custom-ai-tools-samples/custom-ai-tools-samples.md) — 添加特定领域的提示词和工具。
 3. [AI 插件示例](../../../samples/plugin-samples/ai.md) — 查看完整的端到端实现。
 
 **关键概念：** AI 函数注册 · 提示词工程 · 流式响应

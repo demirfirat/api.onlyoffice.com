@@ -2,20 +2,20 @@
 sidebar_position: -1
 ---
 
-# Creating custom functions (beta)
+# Creating custom AI tools (beta)
 
-AI functions define the functionality of an AI agent. They specify:
+AI tools define the functionality of an AI agent. They specify:
 
 - what request to send to the AI model;
 - what manipulations to perform on the document.
 
-Adding custom AI functions expands the AI agent's capabilities and allows adapting it to specific use cases. Whether working with documents, spreadsheets, or presentations, custom functions let you integrate AI-driven operations directly into your workflow and align the agent's behavior with your requirements.
+Adding custom AI tools expands the AI agent's capabilities and allows adapting it to specific use cases. Whether working with documents, spreadsheets, or presentations, custom AI tools let you integrate AI-driven operations directly into your workflow and align the agent's behavior with your requirements.
 
-You can find ready-to-use custom AI functions [here](../samples/custom-ai-functions-samples/custom-ai-functions-samples.md) or create your own ones.
+You can find ready-to-use custom AI tools [here](../samples/custom-ai-tools-samples/custom-ai-tools-samples.md) or create your own ones.
 
-## How to use AI functions {#usage}
+## How to use AI tools {#usage}
 
-To use AI functions, follow the steps below:
+To use AI tools, follow the steps below:
 
 1. [Add a model](ai-plugin.md#configuring) to the AI plugin.
 2. Open the AI agent dialog box by pressing `CTRL + /`.
@@ -36,9 +36,9 @@ The AI agent will run the `commentText` function and insert relevant comments in
 
 ![commentText result](/assets/images/plugins/comment-text-result.png#gh-light-mode-only)![commentText result](/assets/images/plugins/comment-text-result.dark.png#gh-dark-mode-only)
 
-## How to add custom AI functions {#adding-functions}
+## How to add custom AI tools {#adding-functions}
 
-The process of adding a custom function involves two main phases:
+The process of adding a custom AI tool involves two main phases:
 
 - [Function registration](#registration): Registers the AI function and its metadata within the agent's environment.
 - [Function execution](#execution): Implements the core logic, which includes sending requests to the AI model and manipulating document content using our [Office API](../../office-api/get-started/overview.md).
@@ -374,4 +374,4 @@ The entire implementation of the `commentText` function with comments:
 });
 ```
 
-The AI agent functionality continues to evolve alongside the needs of today's digital world. Extend its capabilities by creating your own custom functions, tailored to your specific use cases.
+The AI agent functionality continues to evolve alongside the needs of today's digital world. Extend its capabilities by creating your own custom AI tools, tailored to your specific use cases.

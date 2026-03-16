@@ -4,7 +4,7 @@ sidebar_position: 6
 
 # Templates and boilerplates
 
-**Goal:** Start faster with ready-made structures you can adapt for your own plugins, macros, and AI functions.
+**Goal:** Start faster with ready-made structures you can adapt for your own plugins, macros, and AI tools.
 
 Use these templates together with the [samples](../samples-and-examples/index.md) and [tutorials](../tutorials/index.md) to move from prototype to production-ready solution quickly, without breaking existing plugin, macro, or AI function APIs.
 
@@ -58,14 +58,14 @@ Every macro snippet follows this minimal pattern:
 
 Copy any macro sample into this wrapper and adapt the body.
 
-## Custom AI function patterns
+## Custom AI tool patterns
 
-Take the custom AI function samples as boilerplates for common AI tasks.
+Take the custom AI tool samples as boilerplates for common AI tasks.
 
 ### Pattern: content generation
 
 ```js
-// Register a custom AI function that generates text from a prompt
+// Register a custom AI tool that generates text from a prompt
 Api.RegisterAIFunction({
   name: "GenerateDraft",
   description: "Generate a draft paragraph based on a topic",
@@ -77,12 +77,12 @@ Api.RegisterAIFunction({
 });
 ```
 
-- Full examples: [Text document editor AI functions](../../samples/custom-ai-functions-samples/custom-ai-functions-samples.md#text-document-editor)
+- Full examples: [Text document editor AI tools](../../samples/custom-ai-tools-samples/custom-ai-tools-samples.md#text-document-editor)
 
 ### Pattern: data analysis
 
 ```js
-// Register a custom AI function that explains a spreadsheet formula
+// Register a custom AI tool that explains a spreadsheet formula
 Api.RegisterAIFunction({
   name: "ExplainFormula",
   description: "Explain what a spreadsheet formula does in plain language",
@@ -94,12 +94,12 @@ Api.RegisterAIFunction({
 });
 ```
 
-- Full examples: [Spreadsheet editor AI functions](../../samples/custom-ai-functions-samples/custom-ai-functions-samples.md#spreadsheet-editor)
+- Full examples: [Spreadsheet editor AI tools](../../samples/custom-ai-tools-samples/custom-ai-tools-samples.md#spreadsheet-editor)
 
 ### Pattern: document intelligence
 
 ```js
-// Register a custom AI function that extracts key points from a document section
+// Register a custom AI tool that extracts key points from a document section
 Api.RegisterAIFunction({
   name: "ExtractKeyPoints",
   description: "Extract key points from the selected document section",
@@ -111,4 +111,4 @@ Api.RegisterAIFunction({
 });
 ```
 
-- Full examples: [Presentation editor AI functions](../../samples/custom-ai-functions-samples/custom-ai-functions-samples.md#presentation-editor)
+- Full examples: [Presentation editor AI tools](../../samples/custom-ai-tools-samples/custom-ai-tools-samples.md#presentation-editor)

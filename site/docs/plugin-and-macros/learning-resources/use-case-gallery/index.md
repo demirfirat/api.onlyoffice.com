@@ -46,7 +46,7 @@ Build interactive language-learning and study environments inside the editor.
 
 1. Combine [Translator](../../samples/plugin-samples/translator.md), [Thesaurus](../../samples/plugin-samples/thesaurus.md), and [Speech](../../samples/plugin-samples/speech.md) plugins for vocabulary work.
 2. Use text document macros to generate reading-comprehension questions from selected passages.
-3. Use custom AI functions to produce differentiated exercises for different proficiency levels.
+3. Use custom AI tools to produce differentiated exercises for different proficiency levels.
 
 ## Content creation
 
@@ -60,7 +60,7 @@ Build rich content environments for writers, editors, and designers.
 
 1. Use the [Photo editor plugin](../../samples/plugin-samples/photo-editor.md) for inline image editing.
 2. Add the [Symbol table plugin](../../samples/plugin-samples/symbol-table.md) for special characters and typography.
-3. Use the [AI plugin](../../samples/plugin-samples/ai.md) with custom AI functions for drafting, rewriting, and adding structure to long texts.
+3. Use the [AI plugin](../../samples/plugin-samples/ai.md) with custom AI tools for drafting, rewriting, and adding structure to long texts.
 
 ## Data processing
 
@@ -73,7 +73,7 @@ Build data pipelines and analysis workflows directly in the spreadsheet editor.
 **Solution:**
 
 1. Use spreadsheet macros (sorting, filtering, aggregations) to prepare and clean the data.
-2. Apply custom AI functions to explain formula results and flag anomalies.
+2. Apply custom AI tools to explain formula results and flag anomalies.
 3. Use the [Get and paste HTML plugin](../../samples/plugin-samples/get-and-paste-html.md) to pull data from external systems.
 4. Generate a text document report from the processed results using document macros.
 
@@ -89,4 +89,4 @@ Keep discussions and content close together for asynchronous and remote teams.
 
 1. Use [Extended comments](../../samples/plugin-samples/extended-comments.md) to add rich, threaded annotations directly in documents.
 2. Integrate the [Telegram plugin](../../samples/plugin-samples/telegram.md) to post document updates and comments to a team channel.
-3. Use macros and custom AI functions to generate meeting notes, summaries, and action item lists from edited document content.
+3. Use macros and custom AI tools to generate meeting notes, summaries, and action item lists from edited document content.
