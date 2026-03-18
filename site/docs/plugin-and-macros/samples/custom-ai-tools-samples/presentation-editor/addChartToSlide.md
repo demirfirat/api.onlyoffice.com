@@ -1,6 +1,6 @@
 # addChartToSlide
 
-This function adds a chart to the specified  or the current slide. By default, the chart is 152x89 mm and centered.
+This function adds a chart to the specified or the current slide. By default, the chart is 152x89 mm and centered.
 
 ## Prompts
 
