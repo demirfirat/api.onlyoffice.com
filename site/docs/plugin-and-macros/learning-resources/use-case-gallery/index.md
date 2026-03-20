@@ -4,7 +4,7 @@ sidebar_position: 5
 
 # Use case gallery
 
-**Goal:** See how samples, macros, and AI functions combine into complete solutions for real-world scenarios.
+**Goal:** See how samples, macros, and AI tools combine into complete solutions for real-world scenarios.
 
 Each use case describes the scenario, the tools involved, and how they work together. Follow the links to the individual component samples to build the full solution.
 

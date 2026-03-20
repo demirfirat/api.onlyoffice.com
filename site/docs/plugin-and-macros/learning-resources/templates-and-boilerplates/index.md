@@ -6,7 +6,7 @@ sidebar_position: 6
 
 **Goal:** Start faster with ready-made structures you can adapt for your own plugins, macros, and AI tools.
 
-Use these templates together with the [samples](../samples-and-examples/index.md) and [tutorials](../tutorials/index.md) to move from prototype to production-ready solution quickly, without breaking existing plugin, macro, or AI function APIs.
+Use these templates together with the [samples](../samples-and-examples/index.md) and [tutorials](../tutorials/index.md) to move from prototype to production-ready solution quickly, without breaking existing plugin, macro, or AI tool APIs.
 
 ## Plugin templates
 

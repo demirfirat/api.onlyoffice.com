@@ -1,6 +1,6 @@
 # addNewSlide
 
-This function adds a new slide at the end of presentation using default layout from the current slide's master.
+This function adds a new slide at the end of the presentation using default layout from the current slide's master.
 
 ## Prompts
 
