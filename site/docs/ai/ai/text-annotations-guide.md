@@ -10,9 +10,9 @@ This guide covers three new API methods and demonstrates their usage through a p
 
 ## New API methods
 
-1. *[`AnnotateParagraph`](../interacting-with-editors/document-api/Methods/AnnotateParagraph.md)* — Adds annotations to the specified paragraph.
-2. *[`SelectAnnotationRange`](../interacting-with-editors/document-api/Methods/SelectAnnotationRange.md)* — Selects text in the document using the specified annotation.
-3. *[`RemoveAnnotationRange`](../interacting-with-editors/document-api/Methods/RemoveAnnotationRange.md)* — Removes a specific annotation range from the document.
+1. *[`AnnotateParagraph`](../../plugins/interacting-with-editors/document-api/Methods/AnnotateParagraph.md)* — Adds annotations to the specified paragraph.
+2. *[`SelectAnnotationRange`](../../plugins/interacting-with-editors/document-api/Methods/SelectAnnotationRange.md)* — Selects text in the document using the specified annotation.
+3. *[`RemoveAnnotationRange`](../../plugins/interacting-with-editors/document-api/Methods/RemoveAnnotationRange.md)* — Removes a specific annotation range from the document.
 
 ## Learning the new methods through plugin development
 
@@ -36,7 +36,7 @@ There is also a hidden field containing the assistant's unique ID. The assistant
 const assistant = {
   id: string,
   name: string,
-  type: number, // 0 - Hint, 1 - Replace, 2 - Replace + Hint
+  type: number, // 0 - Hint, 1 - Replace + Hint, 2 - Replace
   query: string, // prompt - user query
 }
 ```
@@ -72,7 +72,7 @@ prompt += "TEXT TO ANALYZE:\n```\n" + paragraph_text + "\n```\n\n";
 
 You can analyze either the entire document (all paragraphs) or just the selected fragment. This example focuses on processing selected paragraphs.
 
-Paragraph text can be retrieved by subscribing to the [`onParagraphText`](../interacting-with-editors/document-api/Events/onParagraphText.md) event.
+Paragraph text can be retrieved by subscribing to the [`onParagraphText`](../../plugins/interacting-with-editors/document-api/Events/onParagraphText.md) event.
 
 ```js
 window.Asc.plugin.attachEditorEvent("onParagraphText", (data) => {
@@ -110,7 +110,7 @@ After sending the request to the AI, a response is received containing all ident
 
 ### Adding annotations
 
-To display these results within the document, use the [`AnnotateParagraph`](../interacting-with-editors/document-api/Methods/AnnotateParagraph.md) method.
+To display these results within the document, use the [`AnnotateParagraph`](../../plugins/interacting-with-editors/document-api/Methods/AnnotateParagraph.md) method.
 
 ```js
 await Asc.Editor.callMethod("AnnotateParagraph", [{
@@ -129,9 +129,9 @@ await Asc.Editor.callMethod("AnnotateParagraph", [{
 
 Once annotations are added, user interaction must be handled. Clicking an annotation should trigger a popup displaying the original text, the suggested replacement, and a brief explanation, along with **Accept** and **Reject** buttons. This is managed through three specific events:
 
-1. [`onBlurAnnotation`](../interacting-with-editors/document-api/Events/onBlurAnnotation.md) — Triggered when an annotation loses focus.
-2. [`onClickAnnotation`](../interacting-with-editors/document-api/Events/onClickAnnotation.md) — Triggered when the user clicks an annotation.
-3. [`onFocusAnnotation`](../interacting-with-editors/document-api/Events/onFocusAnnotation.md) — Triggered when an annotation receives focus.
+1. [`onBlurAnnotation`](../../plugins/interacting-with-editors/document-api/Events/onBlurAnnotation.md) — Triggered when an annotation loses focus.
+2. [`onClickAnnotation`](../../plugins/interacting-with-editors/document-api/Events/onClickAnnotation.md) — Triggered when the user clicks an annotation.
+3. [`onFocusAnnotation`](../../plugins/interacting-with-editors/document-api/Events/onFocusAnnotation.md) — Triggered when an annotation receives focus.
 
 All three events return `{name, paragraphId, ranges}`. For this implementation, two events are used: `onClickAnnotation` (to show the popup) and `onBlurAnnotation` (to hide it).
 
