@@ -1,5 +1,6 @@
 {
   "position": 4,
   "collapsed": false,
-  "label": "Templates and boilerplates"
+  "label": "Templates and boilerplates",
+  "link": {"type": "doc", "id": "docs/plugins/learning-resources/templates-and-boilerplates/index"}
 }
