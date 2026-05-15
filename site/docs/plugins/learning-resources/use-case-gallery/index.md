@@ -62,21 +62,6 @@ Build rich content environments for writers, editors, and designers.
 2. Add the [Symbol table plugin](/docs/plugins/samples/symbol-table.md) for special characters and typography.
 3. Use the [AI plugin](/docs/plugins/samples/ai.md) with custom AI tools for drafting, rewriting, and adding structure to long texts.
 
-## Data processing
-
-Build data pipelines and analysis workflows directly in the spreadsheet editor.
-
-### Automated report generator
-
-**Scenario:** An analyst needs to import data, run calculations, and produce a formatted summary report.
-
-**Solution:**
-
-1. Use spreadsheet macros (sorting, filtering, aggregations) to prepare and clean the data.
-2. Apply custom AI tools to explain formula results and flag anomalies.
-3. Use the [Get and paste HTML plugin](/docs/plugins/samples/get-and-paste-html.md) to pull data from external systems.
-4. Generate a text document report from the processed results using document macros.
-
 ## Team collaboration
 
 Keep discussions and content close together for asynchronous and remote teams.
