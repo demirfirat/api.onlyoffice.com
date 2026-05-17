@@ -135,6 +135,6 @@ window.addEventListener("message", function (e) {
 
 1. [Photo editor plugin sample](/docs/plugins/samples/photo-editor.md) — reference implementation you can run immediately.
 2. [Plugin structure](/docs/plugins/structure/configuration/configuration.md) — full `config.json` field reference.
-3. [executeMethod reference](/docs/plugins/interacting-with-editors/interacting-with-editors.md) — complete list of editor methods available to plugins.
+3. [executeMethod reference](/docs/plugins/interacting-with-editors/overview/how-to-call-methods.md) — complete list of editor methods available to plugins.
 
 **Key concepts:** `GetSelectedImage` · `PutImageBase64` · in-panel iframe · base64 image data
