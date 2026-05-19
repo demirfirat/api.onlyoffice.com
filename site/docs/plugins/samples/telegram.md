@@ -13,7 +13,7 @@ The plugin has no access to the camera and microphone, so you will be unable to 
 
 **Plugin type:** visual, non-system.
 
-**Supported editors:** documents, spreadsheets, presentations.
+**Supported editors:** documents, spreadsheets, presentations, PDF.
 
 **Analogues:** [Rainbow](https://github.com/ONLYOFFICE/onlyoffice.github.io/tree/master/sdkjs-plugins/content/rainbow), [Jitsi](https://github.com/ONLYOFFICE/onlyoffice.github.io/tree/master/sdkjs-plugins/content/jitsi).
 

@@ -9,7 +9,7 @@ Converts the selected text into speech. The plugin uses [guessLanguage](https://
 
 **Plugin type:** visual, non-system.
 
-**Supported editors:** documents.
+**Supported editors:** documents, PDF.
 
 ```mdx-code-block
 import YoutubeVideo from '@site/src/components/YoutubeVideo/YoutubeVideo';
@@ -132,6 +132,7 @@ Repository on GitHub: [speech](https://github.com/ONLYOFFICE/onlyoffice.github.i
       "EditorsSupport": ["word", "pdf"],
       "isVisual": false,
       "initDataType": "text",
+      "isUpdateOleOnResize": false,
 
       "buttons": [],
       "store": {

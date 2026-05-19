@@ -52,7 +52,7 @@ Repository on GitHub: [clippy](https://github.com/ONLYOFFICE/sdkjs-plugins/tree/
       "description": "Clippy",
       "url": "index.html",
 
-      "icons": ["resources/img/icon.png", "resources/img/icon@2x.png"],
+      "icons": ["resources/img/icon.png", "resources/img/icon@2x.png", "resources/img/icon.png", "resources/img/icon@2x.png"],
       "isViewer": true,
       "EditorsSupport": ["word", "slide", "cell"],
 
@@ -62,6 +62,7 @@ Repository on GitHub: [clippy](https://github.com/ONLYOFFICE/sdkjs-plugins/tree/
 
       "initDataType": "none",
       "initData": "",
+      "isUpdateOleOnResize": false,
 
       "buttons": []
     },

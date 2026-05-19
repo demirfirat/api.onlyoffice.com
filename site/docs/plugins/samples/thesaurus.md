@@ -9,7 +9,7 @@ Connects [Big Huge Thesaurus](https://words.bighugelabs.com/) to search for word
 
 **Plugin type:** visual, non-system.
 
-**Supported editors:** documents, spreadsheets, presentations.
+**Supported editors:** documents, spreadsheets, presentations, PDF.
 
 ```mdx-code-block
 import YoutubeVideo from '@site/src/components/YoutubeVideo/YoutubeVideo';
@@ -61,7 +61,7 @@ Repository on GitHub: [thesaurus](https://github.com/ONLYOFFICE/onlyoffice.githu
     "de": "Thesaurus"
   },
   "guid": "asc.{BE5CBF95-C0AD-4842-B157-AC40FEDD9840}",
-  "version": "1.0.2",
+  "version": "1.0.3",
 
   "variations": [
     {

@@ -82,8 +82,8 @@ Repository on GitHub: [zotero](https://github.com/ONLYOFFICE/onlyoffice.github.i
     "de": "Zotero"
   },
   "guid": "asc.{BFC5D5C6-89DE-4168-9565-ABD8D1E48711}",
-  "version": "1.0.3",
-  "minVersion": "7.3.3",
+  "version": "1.0.7",
+  "minVersion": "9.3.0",
 
   "variations": [
     {
@@ -144,6 +144,10 @@ Repository on GitHub: [zotero](https://github.com/ONLYOFFICE/onlyoffice.github.i
       "isModal": false,
       "isInsideMode": true,
       "initOnSelectionChanged": false,
+      "events": [
+        "onContextMenuShow",
+        "onContextMenuClick"
+      ],
       "store": {
         "background": {
           "light": "#2D3037",

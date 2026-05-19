@@ -7,7 +7,7 @@ tags: ["Docs", "Plugins", "Ready-to-use", "Documents", "Spreadsheets", "Presenta
 
 Helps the user to input text quickly.
 
-**Plugin type:** input helper, system.
+**Plugin type:** input helper, background.
 
 **Supported editors:** documents, spreadsheets, presentations.
 
@@ -47,7 +47,7 @@ Repository on GitHub: [autocomplete](https://github.com/ONLYOFFICE/onlyoffice.gi
     "de": "Autocomplete"
   },
   "guid": "asc.{A103601F-FDA0-418A-BC37-A514031894C0}",
-  "version": "1.0.0",
+  "version": "1.1.0",
 
   "variations": [
     {
@@ -64,12 +64,13 @@ Repository on GitHub: [autocomplete](https://github.com/ONLYOFFICE/onlyoffice.gi
       "isViewer": false,
       "EditorsSupport": ["word", "slide", "cell"],
       "isVisual": false,
-      "isSystem": true,
+      "type": "background",
       "initDataType": "none",
             
       "events": [
         "onInputHelperClear",
-        "onInputHelperInput"
+        "onInputHelperInput",
+        "onKeyDown"
       ],
       "store": {
         "background": {

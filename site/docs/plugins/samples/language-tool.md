@@ -9,7 +9,7 @@ Connects the [LanguageTool](https://languagetool.org/) assistant, multilingual g
 
 **Plugin type:** visual, non-system.
 
-**Supported editors:** documents, spreadsheets, presentations.
+**Supported editors:** documents, spreadsheets, presentations, PDF.
 
 **Analogue:** [Glavred](https://github.com/ONLYOFFICE/onlyoffice.github.io/tree/master/sdkjs-plugins/content/glavred), [Grammalecte](https://github.com/ONLYOFFICE/onlyoffice.github.io/tree/master/sdkjs-plugins/content/grammalecte).
 
@@ -64,7 +64,7 @@ Repository on GitHub: [languagetool](https://github.com/ONLYOFFICE/onlyoffice.gi
     "de": "LanguageTool"
   },
   "guid": "asc.{7CDB02C9-A0BF-4B56-9A1A-71C860B8498F}",
-  "version": "1.0.3",
+  "version": "1.0.5",
 
   "variations": [
     {

@@ -11,7 +11,7 @@ Supported languages are listed [here](https://github.com/typograf/typograf/blob/
 
 **Plugin type:** visual, non-system.
 
-**Supported editors:** documents.
+**Supported editors:** documents, spreadsheets, presentations.
 
 ```mdx-code-block
 import YoutubeVideo from '@site/src/components/YoutubeVideo/YoutubeVideo';
@@ -76,7 +76,7 @@ Repository on GitHub: [typograf](https://github.com/ONLYOFFICE/onlyoffice.github
     "de": "Typograf"
   },
   "guid": "asc.{55159EC6-C91A-4DDB-8E1E-558454666461}",
-  "version": "1.0.1",
+  "version": "1.0.2",
 
   "variations": [
     {
