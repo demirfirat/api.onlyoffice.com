@@ -31,7 +31,7 @@ Download this plugin from [GitHub](https://github.com/ONLYOFFICE/onlyoffice.gith
 
 Repository on GitHub: [chess](https://github.com/ONLYOFFICE/onlyoffice.github.io/tree/master/sdkjs-plugins/content/chess).
 
-1. *config.json*, *index.html*, and *chess.js*
+1. *config.json*, *index.html*, and *scripts/chess.js*
 2. Icons
 3. *index\_about.html* for the plugin **About** window
 
@@ -175,7 +175,6 @@ Repository on GitHub: [chess](https://github.com/ONLYOFFICE/onlyoffice.github.io
 - [info.data](/docs/plugins/interacting-with-editors/overview/how-to-call-commands.md#data)
 - [info.guid](/docs/plugins/interacting-with-editors/overview/how-to-call-commands.md#guid)
 - [info.height](/docs/plugins/interacting-with-editors/overview/how-to-call-commands.md#height)
-- [info.imgSrc](/docs/plugins/interacting-with-editors/overview/how-to-call-commands.md#imgSrc)
 - [info.mmToPx](/docs/plugins/interacting-with-editors/overview/how-to-call-commands.md#mmToPx)
 - [info.objectId](/docs/plugins/interacting-with-editors/overview/how-to-call-commands.md#objectId)
 - [info.resize](/docs/plugins/interacting-with-editors/overview/how-to-call-commands.md#resize)
@@ -183,4 +182,4 @@ Repository on GitHub: [chess](https://github.com/ONLYOFFICE/onlyoffice.github.io
 
 ## Support
 
-If you want to request a feature or report a bug regarding this plugin, use the issues section on [GitHub](https://github.com/ONLYOFFICE/sdkjs-plugins/issues).
+If you want to request a feature or report a bug regarding this plugin, use the issues section on [GitHub](https://github.com/ONLYOFFICE/onlyoffice.github.io/issues).

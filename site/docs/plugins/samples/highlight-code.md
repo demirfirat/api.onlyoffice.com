@@ -41,7 +41,7 @@ The plugin guid: `{BE5CBF95-C0AD-4842-B157-AC40FEDD9841}`.
 
 Repository on GitHub: [highlightcode](https://github.com/ONLYOFFICE/onlyoffice.github.io/tree/master/sdkjs-plugins/content/highlightcode).
 
-1. *config.json*, *index.html*, and *code.js*
+1. *config.json*, *index.html*, and *scripts/code.js*
 
 2. Icons
 
@@ -72,7 +72,7 @@ Repository on GitHub: [highlightcode](https://github.com/ONLYOFFICE/onlyoffice.g
     "pt-BR": "Highlight code",
     "fr": "Code en surbrillance"
   },
-  "version": "1.0.2",
+  "version": "1.0.3",
   "variations": [
     {
       "EditorsSupport": [
@@ -149,6 +149,7 @@ Repository on GitHub: [highlightcode](https://github.com/ONLYOFFICE/onlyoffice.g
       "initOnSelectionChanged": true,
       "isInsideMode": false,
       "isModal": true,
+      "isUpdateOleOnResize": false,
       "isViewer": false,
       "isVisual": true,
       "url": "index.html",

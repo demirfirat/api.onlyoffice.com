@@ -35,7 +35,7 @@ The plugin guid: `{38E022EA-AD92-45FC-B22B-49DF39746DB4}`.
 
 Repository on GitHub: [youtube](https://github.com/ONLYOFFICE/onlyoffice.github.io/tree/master/sdkjs-plugins/content/youtube).
 
-1. *config.json*, *index.html*, and *youtube.js*
+1. *config.json*, *index.html*, and *scripts/youtube.js*
 
 2. Icons
 
@@ -139,7 +139,6 @@ Repository on GitHub: [youtube](https://github.com/ONLYOFFICE/onlyoffice.github.
 - [info.data](/docs/plugins/interacting-with-editors/overview/how-to-call-commands.md#data)
 - [info.guid](/docs/plugins/interacting-with-editors/overview/how-to-call-commands.md#guid)
 - [info.height](/docs/plugins/interacting-with-editors/overview/how-to-call-commands.md#height)
-- [info.imgSrc](/docs/plugins/interacting-with-editors/overview/how-to-call-commands.md#imgSrc)
 - [info.mmToPx](/docs/plugins/interacting-with-editors/overview/how-to-call-commands.md#mmToPx)
 - [info.objectId](/docs/plugins/interacting-with-editors/overview/how-to-call-commands.md#objectId)
 - [info.resize](/docs/plugins/interacting-with-editors/overview/how-to-call-commands.md#resize)

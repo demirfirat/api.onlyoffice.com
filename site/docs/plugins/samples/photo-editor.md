@@ -34,7 +34,7 @@ The plugin guid: `{07FD8DFA-DFE0-4089-AL24-0730933CC80A}`.
 
 Repository on GitHub: [photoeditor](https://github.com/ONLYOFFICE/onlyoffice.github.io/tree/master/sdkjs-plugins/content/photoeditor).
 
-1. *config.json*, *index.html*, and *photoeditor.js*
+1. *config.json*, *index.html*, and *scripts/photoeditor.js*
 
 2. Icons
 
@@ -61,7 +61,7 @@ Repository on GitHub: [photoeditor](https://github.com/ONLYOFFICE/onlyoffice.git
     "de": "Foto-Editor"
   },
   "guid": "asc.{07FD8DFA-DFE0-4089-AL24-0730933CC80A}",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "baseUrl": "",
 
   "variations": [
@@ -193,9 +193,10 @@ Repository on GitHub: [photoeditor](https://github.com/ONLYOFFICE/onlyoffice.git
 - [onTranslate](/docs/plugins/structure/localization.md#applying-translations-to-plugin)
 - [callCommand](/docs/plugins/interacting-with-editors/overview/how-to-call-commands.md#callcommand)
 - [executeMethod ("GetImageDataFromSelection")](/docs/plugins/interacting-with-editors/document-api/Methods/GetImageDataFromSelection.md)
-- [executeMethod ("GerVersion")](/docs/plugins/interacting-with-editors/document-api/Methods/GetVersion.md)
+- [executeMethod ("GetVersion")](/docs/plugins/interacting-with-editors/document-api/Methods/GetVersion.md)
 - [executeMethod ("PutImageDataToSelection")](/docs/plugins/interacting-with-editors/document-api/Methods/PutImageDataToSelection.md)
 - [resizeWindow](/docs/plugins/customization/windows-and-panels.md#interacting-with-a-window)
+- [onThemeChanged](/docs/plugins/customization/theme.md)
 - [Asc.scope](/docs/plugins/interacting-with-editors/overview/how-to-call-commands.md#ascscope-object) object
 - [info.editorType](/docs/plugins/interacting-with-editors/overview/how-to-call-commands.md#editorType)
 

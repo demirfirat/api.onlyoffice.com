@@ -9,7 +9,7 @@ Connects the [Google Translate API](https://cloud.google.com/translate?hl=ru) fo
 
 **Plugin type:** visual, non-system.
 
-**Supported editors:** documents, spreadsheets, presentations.
+**Supported editors:** documents, spreadsheets, presentations, PDF.
 
 **Analogues:** [Apertium](https://github.com/ONLYOFFICE/onlyoffice.github.io/tree/master/sdkjs-plugins/content/apertium), [DeepL](https://github.com/ONLYOFFICE/onlyoffice.github.io/tree/master/sdkjs-plugins/content/deepl).
 
@@ -37,7 +37,7 @@ The plugin guid: `{7327FC95-16DA-41D9-9AF2-0E7F449F6800}`.
 
 Repository on GitHub: [translator](https://github.com/ONLYOFFICE/onlyoffice.github.io/tree/master/sdkjs-plugins/content/translator).
 
-1. *config.json*, *index.html*, and *translate.js*
+1. *config.json*, *index.html*, and *scripts/translate.js*
 
 2. Icons
 
@@ -63,7 +63,7 @@ Repository on GitHub: [translator](https://github.com/ONLYOFFICE/onlyoffice.gith
     "de": "Übersetzer"
   },
   "guid": "asc.{7327FC95-16DA-41D9-9AF2-0E7F449F6800}",
-  "version": "1.0.6",
+  "version": "1.0.8",
 
   "variations": [
     {

@@ -39,7 +39,7 @@ You can also download this plugin from the [ONLYOFFICE App Directory](https://ww
 
 Repository on GitHub: [speech](https://github.com/ONLYOFFICE/onlyoffice.github.io/tree/master/sdkjs-plugins/content/speech).
 
-1. *config.json*, *index.html*, and *speech.js*
+1. *config.json*, *index.html*, and *scripts/speech.js*
 
 2. Icons
 
@@ -71,7 +71,7 @@ Repository on GitHub: [speech](https://github.com/ONLYOFFICE/onlyoffice.github.i
     "zh": "讲话"
   },
   "guid": "asc.{D71C2EF0-F15B-47C7-80E9-86D671F9C595}",
-  "version": "2.0.1",
+  "version": "2.0.2",
 
   "variations": [
     {

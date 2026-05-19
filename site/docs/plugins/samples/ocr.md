@@ -1,6 +1,6 @@
 ---
 description: Extract text from images using TesseractJS OCR.
-tags: ["Docs", "Plugins", "Ready-to-use", "Documents", "Spreadsheets", "Presentations"]
+tags: ["Docs", "Plugins", "Ready-to-use", "Documents"]
 ---
 
 # OCR
@@ -9,7 +9,7 @@ Connects the [TesseractJS-Core library](https://tesseract.projectnaptha.com/) fo
 
 **Plugin type:** visual, non-system.
 
-**Supported editors:** documents, spreadsheets, presentations.
+**Supported editors:** documents.
 
 ```mdx-code-block
 import YoutubeVideo from '@site/src/components/YoutubeVideo/YoutubeVideo';
@@ -37,7 +37,7 @@ The plugin guid: `{440EBF13-9B19-4BD8-8621-05200E58140B}`.
 
 Repository on GitHub: [ocr](https://github.com/ONLYOFFICE/onlyoffice.github.io/tree/master/sdkjs-plugins/content/ocr).
 
-1. *config.json*, *index.html*, and *ocr.js*
+1. *config.json*, *index.html*, and *scripts/ocr.js*
 
 2. Icons
 
@@ -63,7 +63,7 @@ Repository on GitHub: [ocr](https://github.com/ONLYOFFICE/onlyoffice.github.io/t
     "pt-BR": "OCR"
   },
   "guid": "asc.{440EBF13-9B19-4BD8-8621-05200E58140B}",
-  "version": "2.0.0",
+  "version": "2.1.0",
 
   "variations": [
     {
