@@ -36,8 +36,10 @@ The plugin guid: `{9DC93CDB-B576-4F0C-B55E-FCC9C48DD007}`.
    - **Settings**: the configuration panel to select your AI provider, enter the API key, and select one of its models;
    - **Chatbot**: start a conversation with the AI to ask questions, rewrite text, brainstorm ideas, and more;
    - **Summarization**: automatically summarize the entered text and choose ways to insert the result;
-   - **Translation**: translate selected text using the configured AI service.
-5. You can use the plugin on selected text. To do this, select the text, right-click it, and in the AI menu choose one of the options: **Summarization**, **Text analysis**, **Translate**, **Image**, or **Chatbot**.
+   - **Translation**: translate selected text using the configured AI service;
+   - **Grammar & Spelling**: check the grammar and spelling of the selected text;
+   - **Create AI assistant**: create a new AI assistant to perform repetitive text tasks.
+5. You can use the plugin on selected text. To do this, select the text, right-click it, and in the AI menu choose one of the options: **Summarization**, **Text analysis**, **Translate**, **Image**, **Grammar & Spelling**, or **Chatbot**.
 6. The plugin will respond based on the configured AI model.
 7. Insert the response into the document or use it for your needs.
 
@@ -80,11 +82,12 @@ Repository on GitHub: [ai](https://github.com/ONLYOFFICE/onlyoffice.github.io/tr
         "ja-JA": "AI",
         "sq-AL": "AI",
         "it": "IA",
-        "ar-SA": "AI"
+        "ar-SA": "AI",
+        "ru": "ИИ"
     },
 
     "guid" : "asc.{9DC93CDB-B576-4F0C-B55E-FCC9C48DD007}",
-    "version": "2.4.2",
+    "version": "3.2.3",
     "minVersion" : "8.2.0",
 
     "variations" : [
